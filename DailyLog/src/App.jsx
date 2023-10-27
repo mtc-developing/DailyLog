@@ -1,20 +1,23 @@
 import { useState } from 'react'
 
-import Header from './Header/Header'
+import Title from './Title/Title'
 import MainBackground from './MainBackground/MainBackground'
 
 import styles from './App.module.css'
 
 function App() {
   const [count, setCount] = useState(0)
+  const [introFinished, setIntroFinished] = useState(false);
 
   return (
-    <>
+    <div className={styles["app-container"]}>
       <MainBackground />
+      {!introFinished && <Title />}
+      {introFinished &&
       <div className={styles["main-container"]}>
-        <Header />
-      </div>
-    </>
+        {/* MAIN CONTENT */}
+      </div>}
+    </div>
     
   )
 }

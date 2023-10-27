@@ -13,6 +13,7 @@
     background: #04165a;
     overflow: hidden;
     z-index: -5;
+    transform: rotate(180deg);
 }
 
 .background span {

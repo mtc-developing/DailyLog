@@ -1,5 +1,6 @@
 .title-container{
-color: white;
+color: rgb(245, 244, 251);
+padding-top: 20vh;
 text-align: center;
 width: 100%;
 height: 30%;
@@ -7,12 +8,11 @@ display: flex;
 flex-direction: column;
 justify-content: space-evenly;
 align-items: center;
-border: 1px solid yellow;
 overflow-x: hidden;
 }
 
 .main-title-container{
-    font-size:2.5rem;
+    font-size:3rem;
     letter-spacing: 0.4rem;
     position: relative;
     overflow: hidden;
@@ -21,11 +21,13 @@ overflow-x: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 4rem;
+    border: 1px solid rgb(245, 244, 251);
 }
 
 .span{
-    transform: translateX(50rem);
-    animation: title 2.8s ease-in-out forwards;
+    transform: translateX(100vw);
+    animation: title 0.95s ease-in-out forwards;
 }
 
 .span:nth-child(1) {
@@ -55,11 +57,25 @@ overflow-x: hidden;
 
 @keyframes title{
     0%{
-        color:red;
-        transform: translateX(500px);
+        color:rgba(245, 244, 251, 0.2);
+        transform: translateX(100vw);
+        transform: scale(50);
+    }
+    50%{
+        color: rgba(245, 244, 251, 0.3)
+    }
+    90%{
+        color: rgba(245, 244, 251, 0.5)
     }
     100%{
-        color:green;
-        transform: translateX(0px);
+        color:rgb(245, 244, 251);
+        transform: translateX(0);
     }
+}
+
+/* THIS IS WHERE THE BRAND LOGO CODE STARTS */
+
+.mcDev{
+    opacity: 1;
+    font-style:normal;
 }

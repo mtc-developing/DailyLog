@@ -15,7 +15,7 @@ function Title(props) {
                 <span className={styles.span}>o</span>
                 <span className={styles.span}>g</span>
             </div>
-            <h2>a moble app by Cain Creative</h2>
+            {/* <h2 className={styles.mcDev}>a C.C. mobile app</h2> */}
         </div>
     )
 }

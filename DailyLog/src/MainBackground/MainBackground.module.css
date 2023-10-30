@@ -48,7 +48,7 @@
     box-shadow: 50vmin 0 6.445825063787621vmin currentColor;
 }
 .background span:nth-child(2) {
-    color: #f5f4fb;
+    color: rgb(245, 244, 251);
     top: 69%;
     left: 96%;
     animation-duration: 24s;

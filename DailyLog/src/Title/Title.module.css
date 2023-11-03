@@ -26,8 +26,8 @@ overflow-x: hidden;
 }
 
 .span{
-    transform: translateX(100vw);
-    animation: title 0.95s ease-in-out forwards;
+    transform: translateX(500vw);
+    animation: title 0.90s ease-in-out forwards;
 }
 
 .span:nth-child(1) {
@@ -58,18 +58,29 @@ overflow-x: hidden;
 @keyframes title{
     0%{
         color:rgba(245, 244, 251, 0.2);
-        transform: translateX(100vw);
+        transform: translateX(500vw);
         transform: scale(50);
     }
     50%{
         color: rgba(245, 244, 251, 0.3)
     }
+    60%{
+        color: rgba(245, 244, 251, 0.5);
+    }
+    70%{
+        color: rgba(0, 0, 0, 0.5);
+        transform: translateX(0vw);
+        transform: scale(1);
+    }
     90%{
-        color: rgba(245, 244, 251, 0.5)
+        color:rgb(0, 0, 0, 0.6);
+        transform: translateX(0vw);
+        transform: scale(1.5)
     }
     100%{
         color:rgb(245, 244, 251);
-        transform: translateX(0);
+        transform: translateX(0vw);
+        transform: scale(1)
     }
 }
 

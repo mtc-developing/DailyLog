@@ -21,71 +21,36 @@ overflow-y: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 3rem;
+    padding: 2rem;
     border: 1px solid rgb(245, 244, 251);
-    animation: title-container 6s forwards;
+    animation: title-container 5s ease forwards;
     animation-delay: 5s;
 }
 
 @keyframes title-container{
-    0%{
-        padding: 2rem;
-        transform: none;
-    }
-    10%{
-        padding: 1rem;
-        transform: none;
-        border: 2px solid rgb(245, 244, 251);
-    }
     20%{
-        height: 0;
         padding: 0;
-        transform:none;
-        box-shadow: 0px 0px 100px 20px rgba(245, 244, 251, 0.5)
-    }
-    25%{
         height: 0;
-        padding: 0;
-        transform:none;
-        box-shadow: none;
-    }
-    30%{
-        height: 0;
-        padding: 0;
-        transform:none;
-        box-shadow: none;
-    }
-    35%{
-        height: 0;
-        padding: 0;
-        transform:none;
-        box-shadow: none;
-    }
-    40%{
-        height: 0;
-        padding: 0;
-        transform:none;
-        box-shadow: 0px 0px 300px 5px rgb(245, 244, 251)
+        transform: rotate(0deg);
     }
     50%{
-        height:0;
-        padding:0;
-        border: 3px solid rgb(245, 244, 251);
+        border: 3px solid rgb(76, 64, 186);
+        transform:rotate(-30deg);
+        box-shadow: 0px 0px 500px 500px rgba(245, 244, 251, 0.5);
     }
-    60%{
-        height: 0;
-        padding: 0;
-        transform:rotate(1440deg);
-        border: 3px solid rgb(245, 244, 251);
-        box-shadow: 0px 20px 100px 20px rgba(245, 244, 251, 0.8);
+    85%{
+        transform: rotate(1080deg);
+        box-shadow: 0px 0px 1px 1px rgba(245, 244, 251, 0.1);
+    }
+    90%{
+        box-shadow: 0px 100px 10px 10px white;
     }
     100%{
-        transform: translateY(-200vh);
         height: 0;
-        padding: 0;
-        border: 3px solid rgb(245, 244, 251);
-        opacity: 0.3;
-        box-shadow: 0px 300px 50px 20px white;
+        padding:0;
+        border: 2px solid rgb(245, 244, 251);
+        box-shadow: 0px 100px 10px 10px white;
+        transform: translateY(-200vh);
     }
 }
 

@@ -10,7 +10,7 @@
     height: 100vh;
     top: 0;
     left: 0;
-    background: #04165a;
+    background: rgb(4, 22, 88);
     overflow: hidden;
     z-index: -5;
     transform: rotate(180deg);

@@ -12,7 +12,7 @@ overflow-y: hidden;
 }
 
 .main-title-container{
-    font-size:2rem;
+    font-size:10vw;
     letter-spacing: 0.4rem;
     position: relative;
     overflow: hidden;
@@ -23,7 +23,7 @@ overflow-y: hidden;
     justify-content: center;
     padding: 2rem;
     border: 1px solid rgb(245, 244, 251);
-    animation: title-container 3.5s ease-in-out forwards;
+    animation: title-container 4s ease-in-out forwards;
     animation-delay: 5s;
 }
 
@@ -49,23 +49,25 @@ overflow-y: hidden;
     45%{
         border: 3px solid rgb(76, 64, 186);
         transform:rotate(-30deg);
-        box-shadow: 0px 0px 5px 5px rgba(245, 244, 251, 0.8);
+        box-shadow: 0px 0px 5px 5px rgba(245, 244, 251, 0.6);
     }
     65%{
-        box-shadow: 0px 0px 500px 500px rgba(245, 244, 251, 0.8);
+        box-shadow: 0px 0px 1000px 1000px rgba(76, 64, 186, 0.8);
         transform: rotate(1080deg);
     }
     75%{
         box-shadow: 0px 0px 10px 10px rgba(76, 64, 186, 0.5);
         border: 2px solid rgb(245, 244, 251);
+        border-top: 2px solid rgb(4, 22, 88);
         transform: rotate(1080deg);
         opacity: 1;
     }
     100%{
         height: 0;
         padding:0;
-        border: 2px solid rgb(4, 22, 88);
-        box-shadow: 0px 100vh 500px 500px rgba(245, 244, 251, 0.5);
+        border: 2px solid rgb(245, 244, 251);
+        border-bottom: 2px solid rgb(4, 22, 88);
+        box-shadow: 0px 100vh 500px 500px rgb(245, 244, 251);
         opacity: 0;
         transform: translateY(-200vh);
     }

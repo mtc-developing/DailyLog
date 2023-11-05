@@ -1,6 +1,6 @@
 import React from "react";
 
-import MyBrand from "./MyBrand";
+import MyBrand from "./MyBrand.jsx";
 
 import styles from "./Title.module.css"
 
@@ -17,7 +17,7 @@ function Title(props) {
                 <span className={styles.span}>o</span>
                 <span className={styles.span}>g</span>
             </div>
-            <MyBrand className />
+            <MyBrand />
         </div>
     )
 }

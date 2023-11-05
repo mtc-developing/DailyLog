@@ -1,0 +1,17 @@
+.myBrand{
+    opacity:0;
+    animation: brand 2s linear forwards;
+    animation-delay: 7s;
+}
+
+@keyframes brand {
+
+    20%{
+        opacity: 0.5;
+    }
+
+    100%{
+        opacity: 1;
+    }
+
+}

@@ -1,5 +1,7 @@
 import React from "react";
 
+import MyBrand from "./MyBrand";
+
 import styles from "./Title.module.css"
 
 function Title(props) {
@@ -15,7 +17,7 @@ function Title(props) {
                 <span className={styles.span}>o</span>
                 <span className={styles.span}>g</span>
             </div>
-            {/* <h2 className={styles.mcDev}>a C.C. mobile app</h2> */}
+            <MyBrand className />
         </div>
     )
 }

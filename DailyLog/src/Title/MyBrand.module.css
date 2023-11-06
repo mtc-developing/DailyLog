@@ -1,7 +1,7 @@
 .myBrand{
     position: fixed;
     opacity:0;
-    animation: brand 3s ease forwards;
+    animation: brand 2.5s ease forwards;
     animation-delay: 7s;
     top: 45%;
     font-size: 8vw;

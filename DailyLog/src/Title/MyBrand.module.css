@@ -2,7 +2,7 @@
     position: fixed;
     opacity:0;
     animation: brand 3s ease forwards;
-    animation-delay: 8s;
+    animation-delay: 9s;
     top: 45%;
     font-size: 8vw;
     color: rgba(4,22,88);

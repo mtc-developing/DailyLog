@@ -89,7 +89,7 @@ overflow-y: hidden;
         height: 0;
         padding:0;
         border: 2px solid rgb(4, 22, 88);
-        box-shadow: 0px 100vh 300px 300px rgb(245, 244, 251);
+        box-shadow: 0px 100vh 1000px 500px rgb(245, 244, 251);
         opacity: 0.3;
         transform: translateY(-200vh);
     }

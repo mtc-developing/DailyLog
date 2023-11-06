@@ -82,7 +82,7 @@ overflow-y: hidden;
     95%{
         border-top: 1.5px solid rgb(245, 244, 251);
         border-top: 5px solid rgb(4,22,88);
-        box-shadow: 0px 80vh 300px 200px rgb(245, 244, 251);
+        box-shadow: 0px 0vh 300px 200px rgb(245, 244, 251);
         color: rgb(4,22,88);
     }
     100%{

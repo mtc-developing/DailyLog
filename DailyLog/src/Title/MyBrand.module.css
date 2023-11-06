@@ -1,0 +1,28 @@
+.myBrand{
+    position: fixed;
+    opacity:0;
+    animation: brand 3.5s ease-out forwards;
+    animation-delay: 7.25s;
+    top: 45%;
+    font-size: 8vw;
+}
+
+@keyframes brand {
+
+    40%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 0.5;
+        top: 70%;
+    }
+    80%{
+        opacity: 1;
+        top: 70%;
+    }
+    100%{
+        opacity: 0;
+        top: 80%;
+    }
+
+}

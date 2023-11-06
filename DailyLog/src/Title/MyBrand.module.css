@@ -2,7 +2,7 @@
     position: fixed;
     opacity:0;
     animation: brand 3s ease forwards;
-    animation-delay: 7.5s;
+    animation-delay: 8s;
     top: 45%;
     font-size: 8vw;
     color: rgba(4,22,88);
@@ -11,7 +11,7 @@
 @keyframes brand {
 
     10%{
-        opacity: 0.5;
+        opacity: 0.25;
     }
     50%{
         opacity: 1;

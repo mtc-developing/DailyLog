@@ -1,24 +1,26 @@
 .myBrand{
     position: fixed;
-    opacity:0;
-    animation: brand 3.5s ease-out forwards;
+    opacity:0.5;
+    animation: brand 3s ease forwards;
     animation-delay: 7.25s;
     top: 45%;
     font-size: 8vw;
+    color: rgba(4,22,88);
 }
 
 @keyframes brand {
 
     40%{
-        opacity: 0;
+        opacity: 0.5;
     }
     50%{
-        opacity: 0.5;
+        opacity: 1;
         top: 70%;
     }
     80%{
         opacity: 1;
         top: 70%;
+        color: rgb(245, 244, 251)
     }
     100%{
         opacity: 0;

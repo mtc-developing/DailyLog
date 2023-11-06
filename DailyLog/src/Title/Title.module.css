@@ -59,7 +59,7 @@ overflow-y: hidden;
         transform: translatey(-50px);
     }
     75%{
-        box-shadow: 0px 0px 10px 10px rgba(76, 64, 186, 0.5);
+        box-shadow: 0px 0px 10px 10px rgb(76, 64, 186);
         border: 2px solid rgb(245, 244, 251);
         border-top: 2px solid rgb(4, 22, 88);
         transform: rotate(1080deg);
@@ -69,24 +69,33 @@ overflow-y: hidden;
         transform: translateY(150px);
     }
     85%{
-        border-top: 5px solid rgb(4, 22, 88);
+        border-top: 5px solid rgb(222, 204, 83);
         border-bottom: rgb(245, 244, 251);
+        box-shadow: 0px 0px 10px 5px rgb(83, 143, 222);
     }
     90%{
         border-top: 5px solid rgb(245, 244, 251);
-        border-bottom: rgb(4, 22, 88);
+        border-bottom: rgb(222, 204, 83);
+        box-shadow: 0px 0px 40px 15px rgb(63, 255, 245);
     }
     95%{
-        border-top: 5px solid rgb(4, 22, 88);
+        border-top: 5px solid rgb(222, 204, 83);
         border-bottom: rgb(245, 244, 251);
+        box-shadow: 0px 0px 30px 10px rgb(4,22,88)
     }
     100%{
         height: 0;
         padding:0;
+<<<<<<< HEAD
         border: 2px solid rgb(245, 244, 251);
         border-bottom: 2px solid rgb(4, 22, 88);
         box-shadow: 0px 100vh 500px 500px rgb(245, 244, 251);
         opacity: 0;
+=======
+        border: 2px solid rgb(4, 22, 88);
+        box-shadow: 0px 100vh 500px 500px rgb(245, 244, 251);
+        opacity: 0.3;
+>>>>>>> openingAnimation
         transform: translateY(-200vh);
     }
 }
@@ -136,12 +145,15 @@ overflow-y: hidden;
         color: rgba(245, 244, 251, 0.5);
     }
     70%{
-        color: rgba(0, 0, 0, 0.5);
+        color: rgb(4, 22, 88);
         transform: translateX(0vw);
         transform: scale(1);
     }
+    80%{
+        color: black;
+    }
     90%{
-        color:rgb(0, 0, 0, 0.6);
+        color:rgb(4, 22, 88);
         transform: translateX(0vw);
         transform: scale(1.5)
     }

@@ -2,14 +2,14 @@
     position: fixed;
     opacity:0;
     animation: brand 3.5s ease-out forwards;
-    animation-delay: 7.5s;
-    top: 50%;
+    animation-delay: 7.25s;
+    top: 45%;
     font-size: 8vw;
 }
 
 @keyframes brand {
 
-    30%{
+    40%{
         opacity: 0;
     }
     50%{

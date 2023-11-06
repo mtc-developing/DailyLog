@@ -1,6 +1,6 @@
 .myBrand{
     position: fixed;
-    opacity:0.5;
+    opacity:0;
     animation: brand 3s ease forwards;
     animation-delay: 7.25s;
     top: 45%;
@@ -10,7 +10,7 @@
 
 @keyframes brand {
 
-    40%{
+    10%{
         opacity: 0.5;
     }
     50%{

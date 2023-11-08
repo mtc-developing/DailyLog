@@ -7,6 +7,7 @@ import styles from "./Title.module.css"
 function Title(props) {
     return (
         <div className={styles["title-container"]}>
+            <MyBrand />
             <div className={styles["main-title-container"]}>
                 <span className={styles.span}>D</span>
                 <span className={styles.span}>a</span>
@@ -17,7 +18,6 @@ function Title(props) {
                 <span className={styles.span}>o</span>
                 <span className={styles.span}>g</span>
             </div>
-            <MyBrand />
         </div>
     )
 }

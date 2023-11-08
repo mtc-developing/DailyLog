@@ -14,7 +14,7 @@ function App() {
     setTimeout(function () {
       setIntroFinished(true)
       console.log("Set intro finished to true")
-    }, 9200)
+    }, 10000)
   }, [])
 
   return (

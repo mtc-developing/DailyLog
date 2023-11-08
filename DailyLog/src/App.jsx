@@ -14,17 +14,23 @@ function App() {
     setTimeout(function () {
       setIntroFinished(true)
       console.log("Set intro finished to true")
-    }, 9000)
+    }, 9200)
   }, [])
 
   return (
-    <div className={styles["app-container"]}>
+
+    <>
+      
       <MainBackground />
       {!introFinished && <Title />}
-      <Dashboard />
-      <Homepage />
-    </div>
-    
+      {introFinished && 
+      <div className={styles["app-container"]}>
+        <Dashboard />
+        <Homepage />
+      </div>
+      }
+      
+    </>
   )
 }
 

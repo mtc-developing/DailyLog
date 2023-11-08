@@ -1,7 +1,7 @@
 .myBrand{
     position: fixed;
     opacity:0;
-    animation: brand 2.5s ease-out forwards;
+    animation: brand 1.8s linear forwards;
     animation-delay: 7.5s;
     top: 45%;
     font-size: 8vw;
@@ -25,6 +25,9 @@
         opacity: 1;
         top: 70%;
         color: rgb(245, 244, 251)
+    }
+    90%{
+        top:65%;
     }
     100%{
         opacity: 0;

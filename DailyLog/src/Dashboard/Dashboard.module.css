@@ -1,0 +1,11 @@
+.dashboard{
+    text-align: center;
+    height: 40vh;
+    width: auto;
+    color: rgba(245, 244, 251, 0.5);
+    padding: 5vh;
+    font-size: 2rem;
+    text-shadow: 3px 3px 5px 5px rgba(4, 22, 88, 0.5);
+
+    border: 1px solid yellow;
+}

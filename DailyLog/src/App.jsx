@@ -1,22 +1,28 @@
-import { useState } from 'react'
+import { useState , useEffect } from 'react'
 
 import Title from './Title/Title'
 import MainBackground from './MainBackground/MainBackground'
+import Homepage from './Homepage/Homepage.jsx'
+import Dashboard from "./Dashboard/Dashboard.jsx"
 
 import styles from './App.module.css'
 
 function App() {
-  const [count, setCount] = useState(0)
   const [introFinished, setIntroFinished] = useState(false);
+
+  useEffect(() => {
+    setTimeout(function () {
+      setIntroFinished(true)
+      console.log("Set intro finished to true")
+    }, 9000)
+  }, [])
 
   return (
     <div className={styles["app-container"]}>
       <MainBackground />
       {!introFinished && <Title />}
-      {introFinished &&
-      <div className={styles["main-container"]}>
-        {/* MAIN CONTENT */}
-      </div>}
+      <Dashboard />
+      <Homepage />
     </div>
     
   )

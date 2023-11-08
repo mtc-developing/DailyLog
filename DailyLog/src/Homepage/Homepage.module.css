@@ -1,0 +1,23 @@
+.homepage{
+    background-color: rgb(245, 244, 251);
+    color: rgb(4,22,88);
+    text-align: center;
+    font-size:1.65rem;
+    transform: translatey(100vh);
+    margin-top: 5vh;
+    padding: 2.5vw;
+    padding-top: 10vh;
+    border-radius: 60px;
+    animation: homepage 1s linear forwards;
+    animation-delay: 9.2s;
+    height:100%;
+    width: auto;
+
+    animation-delay: 0s;
+}
+
+@keyframes homepage{
+    to{
+        transform: translatey(0vh);
+    }
+}

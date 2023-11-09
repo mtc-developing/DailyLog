@@ -3,9 +3,8 @@
     color: rgb(4,22,88);
     text-align: center;
     transform: translatey(100vh);
-    margin-top: 5vh;
     padding: 2.5vw;
-    padding-top: 10vh;
+    padding-top: 10px;
     border-radius: 60px 60px 0px 0px;
     animation: homepage 0.8s ease-out forwards;
     height:100%;
@@ -15,6 +14,7 @@
     border-right: none;
     border-bottom: none;
     border-left: none;
+    flex-basis: 55%;
 }
 
 @keyframes homepage{

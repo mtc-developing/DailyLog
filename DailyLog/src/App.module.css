@@ -4,8 +4,8 @@
     position: fixed;
     display:flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: stretch;
+    align-items: center;
     overflow: hidden;
     font-size: 2.88rem;
+    border: 1px solid yellow;
 }

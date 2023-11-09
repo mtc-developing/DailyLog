@@ -6,14 +6,14 @@ function Dashboard() {
 
     return (
         <div className={styles.dashboard}>
-            <p>Testing Dashboard</p>
-            <span className={styles.time}>
+            <span classname={styles["dashboard-header"]}>daily log</span>
+            <div className={styles.time}>
                 <span>8</span>
                 <span className={styles.colon}>:</span>
                 <span>34</span>
                 <span>pm</span>
-            </span>
-            <p>Monday</p>
+            </div>
+            <span className={styles.date}>monday, april 22nd</span>
         </div>
     )
 }

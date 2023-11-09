@@ -3,18 +3,17 @@
     color: rgb(4,22,88);
     text-align: center;
     transform: translatey(100vh);
-    padding: 2.5vw;
-    padding-top: 10px;
-    border-radius: 60px 60px 0px 0px;
+    padding: 2rem;
+    border-radius: 22% 22% 0px 0px;
     animation: homepage 0.8s ease-out forwards;
     height:100%;
-    width: auto;
+    width: 100%;
     box-shadow: 0px -1px 50px 5px rgba(0,0,0,0.8);
     border-top: 5px solid white;
     border-right: none;
     border-bottom: none;
     border-left: none;
-    flex-basis: 55%;
+    flex-basis: 45%;
 }
 
 @keyframes homepage{

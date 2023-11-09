@@ -21,11 +21,11 @@
 }
 
 .dashboard-header{
-    letter-spacing: 1.25rem;
+    letter-spacing: 1.65rem;
 }
 
 .time{
-    font-size: 5rem;
+    font-size: 8rem;
     display: flex;
     justify-content: center;
     align-items: center;

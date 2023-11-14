@@ -4,11 +4,17 @@ import React from 'react';
 // style imports
 import styles from './Button.module.css';
 
-//  BE SURE TO INCLUDE A RANDOM KEY GENERATOR, EITHER HERE OR IN THE PARENT ELEMENT?
+function randomizeKey() {
+
+    let num = Math.random() * Math.random() ** Math.random()
+    
+    return(num)
+}
+
 function Button(props) {
     
     return (
-        <button className={styles.button} onClick={props.onClick}>{props.name}</button>
+        <button className={styles.button} onClick={props.onClick} key={randomizeKey()}>{props.name}</button>
     )
 
 }

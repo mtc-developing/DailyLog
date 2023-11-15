@@ -9,16 +9,8 @@ import styles from './App.module.css'
 
 function App() {
   const [introFinished, setIntroFinished] = useState(false);
-  const [liveTime, setLiveTime] = useState(() => {
-    let liveDate = new Date();
-    console.log(liveDate);
-    let liveHour = liveDate.getHours() + ":";
-    console.log(liveHour)
-    let liveMinute = liveDate.getMinutes() + "";
-    console.log(liveMinute)
-    let timeOutput = liveHour + liveMinute;
-    return timeOutput
-  });
+  const [liveTime, setLiveTime] = useState(new Date());
+  const [count, setCount] = useState(0);
 
   useEffect(() => {
     setTimeout(function () {
@@ -27,13 +19,22 @@ function App() {
     }, 11000)
   }, [])
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCount(count + 1)
+      setLiveTime(new Date())
+    }, 60 * 1000);
+
+    return () => clearInterval(interval)
+  }, [count])
+
   return (
     <>
       <MainBackground />
       {!introFinished && <Title />}
       {introFinished && 
       <div className={styles["app-container"]}>
-        <Dashboard />
+        <Dashboard liveTime={liveTime} />
         <Homepage />
       </div>
       }

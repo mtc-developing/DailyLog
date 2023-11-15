@@ -5,18 +5,44 @@ import styles from "./Dashboard.module.css";
 // CREATE AN api CALL TO GET WEATHER UPDATES FOR DASHBOARD
 // USE A 3RD PARTY PACKAGE TO FACILITATE DATE/TIME FRAMES IF USED
 
-function Dashboard() {
+function correctHour(h) {
+    let bad = h;
+    bad = parseInt(bad);
+    if(bad <= 12) {
+        return bad
+    }
+    if (bad > 12) {
+        return(bad-12) 
+    }
+}
+
+function correctTimeframe(rawHour){
+    if (parseInt(rawHour) >= 12) {
+        return "pm"
+    }
+    if (parseInt(rawHour) < 12) {
+        return "am"
+    }
+}
+
+function Dashboard(props) {
+
+    const liveTime = props.liveTime;
+    const rawHour = liveTime.getHours();
+    const hour = correctHour(rawHour);
+    const minute = liveTime.getMinutes();
+    const timeframe = correctTimeframe(rawHour);
 
     return (
         <div className={styles.dashboard}>
             <span classname={styles["dashboard-header"]}>------- daily log -------</span>
             <div className={styles.time}>
-                <span>8</span>
+                <span>{hour}</span>
                 <span className={styles.colon}>:</span>
-                <span>34</span>
-                <span>pm</span>
+                <span>{minute}</span>
+                <span>{timeframe}</span>
             </div>
-            <span className={styles.date}>monday, april 22nd</span>
+            <span className={styles.date}>{liveTime.getDay()}, {liveTime.getMonth()} {liveTime.getDate()}</span>
         </div>
     )
 }

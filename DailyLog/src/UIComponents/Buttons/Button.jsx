@@ -21,17 +21,20 @@ function Button(props) {
     
     useEffect(() => {
         if (props.iconNum === 1) {
-            setIcon(<BiCalendarPlus />)
+            setIcon(<BiCalendarPlus className={styles.icon} />)
         }
         if (props.iconNum === 2) {
-            setIcon(<BiSearchAlt />)
+            setIcon(<BiSearchAlt className={styles.icon} />)
         }
         if (props.iconNum === 3) {
-            setIcon(<BiDotsVertical  />)
+            setIcon(<BiDotsVertical className={styles.icon}  />)
         }
     }, [] )
     return (
-        <button className={styles.button} onClick={props.onClick} key={randomizeKey()}>{props.name}{icon}</button>
+        <button className={styles.button} onClick={props.onClick} key={randomizeKey()}>
+            <span>{props.name}</span> 
+            {icon}
+        </button>
     )
 
 }

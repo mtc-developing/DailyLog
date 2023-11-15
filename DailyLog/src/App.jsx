@@ -11,8 +11,11 @@ function App() {
   const [introFinished, setIntroFinished] = useState(false);
   const [liveTime, setLiveTime] = useState(() => {
     let liveDate = new Date();
+    console.log(liveDate);
     let liveHour = liveDate.getHours() + ":";
+    console.log(liveHour)
     let liveMinute = liveDate.getMinutes() + "";
+    console.log(liveMinute)
     let timeOutput = liveHour + liveMinute;
     return timeOutput
   });

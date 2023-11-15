@@ -2,7 +2,7 @@
     width: 100%;
     border: 3px solid rgb(4,22,88);
     color: #041658;
-    font-size: 1.4rem;
+    font-size: 1.18rem;
     padding: 1.65rem;
     border-left: none;
     border-right: none;
@@ -21,8 +21,9 @@
     to{
         transform: translateY(5px);
         padding: 1.40rem;
-        font-size: 1.4rem;
+        font-size: 1rem;
         margin-top: 4px;
-        margin-bottom: 4px;
+        margin-bottom: 3px;
+        background: linear-gradient(to bottom, rgba(4,22,88, 0.2) , rgb(245, 244, 251));
     }
 }

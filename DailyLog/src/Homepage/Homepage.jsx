@@ -10,9 +10,9 @@ function Homepage() {
     
     return (
         <div className={styles.homepage}>
-            <Button name="ADD LOG" />
-            <Button name="VIEW/EDIT" />
-            <Button name="OPTIONS" />
+            <Button name="ADD LOG" iconNum={1} />
+            <Button name="VIEW/EDIT" iconNum={2} />
+            <Button name="OPTIONS" iconNum={3}/>
         </div>
     )
 }

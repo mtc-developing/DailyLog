@@ -1,5 +1,9 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
+// REACT ICONS
+import { BiCalendarPlus } from "react-icons/bi";
+import { BiDotsVertical } from "react-icons/bi";
+import { BiSearchAlt } from "react-icons/bi";
 
 // style imports
 import styles from './Button.module.css';
@@ -12,9 +16,22 @@ function randomizeKey() {
 }
 
 function Button(props) {
+
+    const [icon, setIcon] = useState(null)
     
+    useEffect(() => {
+        if (props.iconNum === 1) {
+            setIcon(<BiCalendarPlus />)
+        }
+        if (props.iconNum === 2) {
+            setIcon(<BiSearchAlt />)
+        }
+        if (props.iconNum === 3) {
+            setIcon(<BiDotsVertical  />)
+        }
+    }, [] )
     return (
-        <button className={styles.button} onClick={props.onClick} key={randomizeKey()}>{props.name}</button>
+        <button className={styles.button} onClick={props.onClick} key={randomizeKey()}>{props.name}{icon}</button>
     )
 
 }

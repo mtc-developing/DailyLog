@@ -9,6 +9,13 @@ import styles from './App.module.css'
 
 function App() {
   const [introFinished, setIntroFinished] = useState(false);
+  const [liveTime, setLiveTime] = useState(() => {
+    let liveDate = new Date();
+    let liveHour = liveDate.getHours() + ":";
+    let liveMinute = liveDate.getMinutes() + "";
+    let timeOutput = liveHour + liveMinute;
+    return timeOutput
+  });
 
   useEffect(() => {
     setTimeout(function () {
@@ -18,9 +25,7 @@ function App() {
   }, [])
 
   return (
-
     <>
-      
       <MainBackground />
       {!introFinished && <Title />}
       {introFinished && 

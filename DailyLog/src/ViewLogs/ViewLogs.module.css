@@ -5,6 +5,7 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    overflow: hidden;
 }
 
 .view-logs-title, .view-logs-exit{
@@ -26,6 +27,7 @@
     align-items: center;
     padding: 1rem;
     border-radius: inherit;
+    overflow-y: scroll;
 
     /* temporary */
     border: 5px solid black;

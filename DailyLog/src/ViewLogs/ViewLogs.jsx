@@ -12,6 +12,7 @@ function ViewLog(props) {
                 <span className={styles["card-container"]}>Dummy Card</span>
                 <span className={styles["card-container"]}>Dummy Card</span>
                 <span className={styles["card-container"]}>Dummy Card</span>
+                <span className={styles["card-container"]}>Dummy Card</span>
             </div>
             <div className={styles["view-logs-exit"]} onClick={props.toggleViewLogsOverlay}>x</div>
         </div>

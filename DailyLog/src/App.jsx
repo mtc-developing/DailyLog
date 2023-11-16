@@ -5,6 +5,7 @@ import MainBackground from './MainBackground/MainBackground'
 import Homepage from './Homepage/Homepage.jsx'
 import Dashboard from "./Dashboard/Dashboard.jsx"
 import MainOverlay from './UIComponents/MainOverlay/MainOverlay.jsx'
+import Settings from './Settings/Settings.jsx';
 
 import styles from './App.module.css'
 
@@ -12,7 +13,9 @@ function App() {
   const [introFinished, setIntroFinished] = useState(false);
   const [liveTime, setLiveTime] = useState(new Date());
   const [count, setCount] = useState(0);
-  const [activeMainOverlay, setActiveMainOverlay] = useState(true);
+  const [activeMainOverlay, setActiveMainOverlay] = useState(false);
+  const [settingsActive, setSettingsActive] = useState(false);
+
   useEffect(() => {
     setTimeout(function () {
       setIntroFinished(true)
@@ -38,6 +41,15 @@ function App() {
     }
   }
 
+  function toggleSettingsHandler() {
+    if (settingsActive) {
+      setSettingsActive(false)
+    }
+    if (!settingsActive) {
+      setSettingsActive(true)
+    }
+  }
+
   return (
     <>
       <MainBackground />
@@ -51,8 +63,9 @@ function App() {
       {/* THIS IS THE MAIN CONTENT OF THE APP. THE HOMEPAGE */}
       {introFinished && 
       <div className={styles["app-container"]}>
-        <Dashboard liveTime={liveTime} />
-        <Homepage toggleMainOverlay={toggleMainOverlay} />
+          <Dashboard liveTime={liveTime} />
+          <Homepage toggleMainOverlay={toggleMainOverlay} toggleSettings={toggleSettingsHandler} />
+          {settingsActive && <Settings toggleSettings={toggleSettingsHandler} />}
       </div>
       }
       

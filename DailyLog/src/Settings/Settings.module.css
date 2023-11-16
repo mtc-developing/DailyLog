@@ -1,0 +1,63 @@
+.main-container{
+    position: fixed;
+    top:0;
+    right:0;
+    bottom: 0;
+    left: 0;
+    transform: translateX(120%);
+    animation: settings 1s ease-out forwards;
+    display: flex;
+    align-items: stretch;
+    z-index: 20;
+    font-size: 1.12rem;
+    letter-spacing: 4.22px;
+    font-weight: bold;
+    color: rgb(245, 244, 251);
+}
+
+.blur{
+    background-color: rgba(245,244,251, 0.18);
+    backdrop-filter: blur(5px);
+    flex-basis: 40%;
+    transform: translateX(100%);
+    animation: blur 0.8s ease-out forwards;
+    animation-delay: 0.8s;
+    z-index: 21;
+    padding: 2rem;
+}
+
+@keyframes blur{
+    to{
+        transform: translateX(0);
+    }
+}
+
+.settings{
+    flex-basis: 60%;
+    background-color: rgb(4,22,88);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    z-index: 22;
+}
+
+.settings span{
+    width: 70%;
+    text-align: center;
+    padding: 1rem;
+    border: 1px solid rgb(244,245,251);
+}
+
+@keyframes settings{
+    to{
+        transform: translateX(0);
+    }
+}
+
+.x{
+    padding: 1rem;
+    background-color: rgb(244,245,251);
+    color: rgb(4,22,88);
+    border: 2px solid rgb(4,22,88);
+}

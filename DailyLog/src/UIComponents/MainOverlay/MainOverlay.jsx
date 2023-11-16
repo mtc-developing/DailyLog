@@ -7,7 +7,7 @@ function MainOverlay(props){
 
     return (
         <div className={styles["main-overlay"]}>
-            {props.children}Testing
+            {props.children}
         </div>
     )
 }

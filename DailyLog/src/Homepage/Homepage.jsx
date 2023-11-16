@@ -11,7 +11,7 @@ function Homepage(props) {
     return (
         <div className={styles.homepage}>
             <Button name="ADD LOG" iconNum={1} />
-            <Button name="VIEW/EDIT" iconNum={2} />
+            <Button name="VIEW/EDIT" iconNum={2} onClick={props.toggleViewLogsOverlay} />
             <Button name="OPTIONS" iconNum={3} onClick={props.toggleSettings} />
         </div>
     )

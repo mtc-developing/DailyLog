@@ -1,7 +1,7 @@
 .main-overlay{
     position: fixed;
     display: flex;
-    top: 10%;
+    top: 120%;
     right: 0;
     bottom: 0;
     left: 0;
@@ -12,13 +12,12 @@
     font-size: 2rem;
     z-index:50;
     overflow: hidden;
-    transform: translateY(120vh);
     border-radius: 8vw 8vw 0px 0px;
     animation: overlay 1s ease-out forwards;
 }
 
 @keyframes overlay{
     to{
-        transform: translateY(0);
+        top: 10%;
     }
 }

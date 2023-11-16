@@ -25,13 +25,35 @@ function correctTimeframe(rawHour){
     }
 }
 
+function constructDayOfTheWeek(rawDay) {
+    let numDay = parseInt(rawDay);
+    let listOfDays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+    return(listOfDays[numDay])
+}
+
+function correctedMonth(rawMonth) {
+    let numMonth = parseInt(rawMonth);
+    let listOfMonths = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    return(listOfMonths[numMonth])
+}
+
+function constructMinutes(rawMinute) {
+    let numMinute = parseInt(rawMinute);
+    if (numMinute < 10) {
+        return "0" + numMinute
+    }
+    return numMinute
+}
+
 function Dashboard(props) {
 
     const liveTime = props.liveTime;
     const rawHour = liveTime.getHours();
     const hour = correctHour(rawHour);
-    const minute = liveTime.getMinutes();
+    const minute = constructMinutes(liveTime.getMinutes());
     const timeframe = correctTimeframe(rawHour);
+    const dayOfTheWeek = constructDayOfTheWeek(liveTime.getDay());
+    const month = correctedMonth(liveTime.getMonth());
 
     return (
         <div className={styles.dashboard}>
@@ -42,7 +64,7 @@ function Dashboard(props) {
                 <span>{minute}</span>
                 <span>{timeframe}</span>
             </div>
-            <span className={styles.date}>{liveTime.getDay()}, {liveTime.getMonth()} {liveTime.getDate()}</span>
+            <span className={styles.date}>{dayOfTheWeek}, {month} {liveTime.getDate()}</span>
         </div>
     )
 }

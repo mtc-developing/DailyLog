@@ -57,7 +57,7 @@ function Dashboard(props) {
 
     return (
         <div className={styles.dashboard}>
-            <span classname={styles["dashboard-header"]}>------- daily log -------</span>
+            <span className={styles["dashboard-header"]}>--- daily log ---</span>
             <div className={styles.time}>
                 <span>{hour}</span>
                 <span className={styles.colon}>:</span>

@@ -13,6 +13,7 @@
     z-index:50;
     overflow: hidden;
     border-radius: 8vw 8vw 0px 0px;
+    border-top: 5px solid white;
     animation: overlay 1s ease-out forwards;
 }
 

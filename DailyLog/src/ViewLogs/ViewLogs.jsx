@@ -1,4 +1,9 @@
 import React from 'react';
+
+// MY CUSTOM UI COMPONENT IMPORTS
+import OverlayTab from '../UIComponents/OverlayTab/OverlayTab';
+
+// MY CUSTOM STYLE IMPORTS
 import styles from "./ViewLogs.module.css";
 
 function ViewLog(props) {
@@ -6,7 +11,7 @@ function ViewLog(props) {
     return (
 
         <div className={styles["main-container"]}>
-            <div className={styles["view-logs-title"]}>today</div>
+            <OverlayTab text="today" />
             <div className={styles.container}>
                 <span className={styles["card-container"]}>Dummy Card</span>
                 <span className={styles["card-container"]}>Dummy Card</span>
@@ -14,7 +19,8 @@ function ViewLog(props) {
                 <span className={styles["card-container"]}>Dummy Card</span>
                 <span className={styles["card-container"]}>Dummy Card</span>
             </div>
-            <div className={styles["view-logs-exit"]} onClick={props.toggleViewLogsOverlay}>x</div>
+            <OverlayTab text="X" onClick={props.toggleViewLogsOverlay} />
+        
         </div>
     )
 }

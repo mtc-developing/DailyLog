@@ -16,6 +16,10 @@ function Settings(props) {
                 <span>REFRESH</span>
                 <span onClick={props.toggleSettings}>QUIT</span>
             </div>
+            <div className={styles.text}>
+                <div>"This si where I will provide the information for any options that ned explaining or a call to action button"</div>
+                <div>BUTTON</div>
+            </div>
         </MainOverlay>
     )
 }

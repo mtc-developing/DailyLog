@@ -12,7 +12,7 @@ import AddLog from './AddLog/AddLog.jsx'
 import styles from './App.module.css'
 
 function App() {
-  const [introFinished, setIntroFinished] = useState(false);
+  const [introFinished, setIntroFinished] = useState(true);
   const [liveTime, setLiveTime] = useState(new Date());
   const [count, setCount] = useState(0);
   const [activeViewLogOverlay, setActiveViewLogOverlay] = useState(false);

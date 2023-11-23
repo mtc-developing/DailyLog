@@ -8,15 +8,33 @@ import AddLogForm from './AddLogForm.jsx';
 // CUSTOM STYLE FILES IMPORT
 import styles from "./AddLog.module.css"
 
+// ATTEMPTING TO USE A VAR TO HOLD INMFORMATION FOR WHICH LOG FORM QUESTION WE ARE ON
+const listOfTitleText = ["Enter a title for your log", "Is this log for keeping track of a tally? (ex: pushups, glasses of water, number of poops) or is it about a task you completed over a chunk of time (ex: dishes, groceries, pet-projects, yard-work)", "What did this task require you to do", "What time did you start this task" , "What time did you finish this task"];
+const listOfTitles = ["Log Title","Log Type","Log Description","Log Start Time","Log End Time"];
+
 function AddLog(props) {
 
     // this is the only UI component that needs to be changed for each input question
     // therefore we will set everything else with regular javascript variablses so as to not refresh the ui component for unecessary useState changes
 
-    const [inputTitle, setInputTitle] = useState("log title")
+    const [inputTitle, setInputTitle] = useState(0)
+    const [logData, setLogData] = useState({
+        log_title: "",
+        log_type: "",
+        log_description: "",
+        log_start_time: "",
+        log_end_time: "",
+        log_count: 0
+    })
+
+    
+
+    // NON STATE VARIABLES -- NOT EVERYTHING HAS TO UTILIZE USEsTATE
+    var iteration = 0;
 
     function submitInputHandler() {
-        
+        // change iteration for which input weare handling
+        // add new key value property to our working log
     }
 
     function submitLogHandler() {
@@ -27,7 +45,7 @@ function AddLog(props) {
         <MainOverlay>
             <div className={styles["add-log-container"]}>
                 <OverlayTab text="Add a Log" />
-                <AddLogForm submitInputHandler={submitInputHandler} inputTitle={inputTitle} />
+                <AddLogForm submitInputHandler={submitInputHandler} inputTitle={listOfTitles[inputTitle]} />
                 <OverlayTab text="X" onClick={props.toggleAddLog} />
             </div>
         </MainOverlay>

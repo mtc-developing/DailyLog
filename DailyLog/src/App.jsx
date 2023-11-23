@@ -11,6 +11,34 @@ import AddLog from './AddLog/AddLog.jsx'
 
 import styles from './App.module.css'
 
+
+const DUMMY_ARRAY = [{
+  log_title: "Dishes",
+  log_type: "text",
+  log_description: "unloaded clean dishes, put load in and started, hand washed rest",
+  log_start_time: "4:30pm",
+  log_end_time: "5:30pm",
+},
+{
+  log_title: 'push-ups',
+  log_type: "count",
+  log_count: "45"
+},
+{
+  log_title: "coding",
+  log_type: "text",
+  log_description: "worked on daily log App form dynamically handling several qquesstions/prompts",
+  log_start_time: "7:00pm",
+  log_end_time: "8:30pm",
+  },
+  {
+    log_title: "shopping",
+    log_type: "text",
+    log_description: "did wekly groceries and errands for parents",
+    log_start_time: "2:00pm",
+    log_end_time: "3:30pm",
+}]
+
 function App() {
   const [introFinished, setIntroFinished] = useState(true);
   const [liveTime, setLiveTime] = useState(new Date());

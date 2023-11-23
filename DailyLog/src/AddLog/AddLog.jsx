@@ -10,7 +10,11 @@ import styles from "./AddLog.module.css"
 
 // ATTEMPTING TO USE A VAR TO HOLD INMFORMATION FOR WHICH LOG FORM QUESTION WE ARE ON
 const listOfTitleText = ["Enter a title for your log", "Is this log for keeping track of a tally? (ex: pushups, glasses of water, number of poops) or is it about a task you completed over a chunk of time (ex: dishes, groceries, pet-projects, yard-work)", "What did this task require you to do", "What time did you start this task" , "What time did you finish this task"];
-const listOfTitles = ["Log Title","Log Type","Log Description","Log Start Time","Log End Time"];
+const listOfTitles = ["Log Title", "Log Type", "Log Description", "Log Start Time", "Log End Time"];
+
+const listOfKeys= ["title", "type", "description", "start_time", "end_time", "count"];
+
+var iteration = 0;
 
 function AddLog(props) {
 
@@ -27,14 +31,8 @@ function AddLog(props) {
         log_count: 0
     })
 
-    
-
-    // NON STATE VARIABLES -- NOT EVERYTHING HAS TO UTILIZE USEsTATE
-    var iteration = 0;
-
-    function submitInputHandler() {
-        // change iteration for which input weare handling
-        // add new key value property to our working log
+    function submitInputHandler(text) {
+        setLogData({ ...logData, "log_" +  })
     }
 
     function submitLogHandler() {

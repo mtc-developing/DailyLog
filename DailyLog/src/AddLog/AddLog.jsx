@@ -36,15 +36,12 @@ function AddLog(props) {
         let i = parseInt(iteration);
         let rawKey = listOfKeys[i];
         let key = commonText + rawKey;
-        key = logData[key];
-        let value = text;
-        let property = {key: value}
         // 1) STORE INFORMATION IN CORRECT OBJECT KEY PER REACT  STANDAREDS
-        setLogData({ ...logData, property } )
+        setLogData({ ...logData, key: text } )
         // 2) UPDATE ITERATION TO CHANGE INFORMATION THAT APPEARS ON THE FORM
         setIteration(i+1)
 
-        console.log(logData.log_title)
+        console.log(logData)
        
     }
 

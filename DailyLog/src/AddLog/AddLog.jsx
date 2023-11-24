@@ -20,30 +20,29 @@ function AddLog(props) {
     // therefore we will set everything else with regular javascript variablses so as to not refresh the ui component for unecessary useState changes
     const [iteration, setIteration] = useState(0);
 
-    const [logData, setLogData] = useState({
-        log_title: "",
-        log_type: "",
-        log_description: "",
-        log_start_time: "",
-        log_end_time: "",
-        log_count: 0
-    })
+    const [logData, setLogData] = useState({});
 
     function submitInputHandler(text) {
 
         // SET UP THE COMMON PREFIXES AUTOMATICALLY PER THE ITERATION
-        let commonText = "log_";
         let i = parseInt(iteration);
-        let rawKey = listOfKeys[i];
-        let key = commonText + rawKey;
-        // 1) STORE INFORMATION IN CORRECT OBJECT KEY PER REACT  STANDAREDS
-        setLogData({ ...logData, key: text } )
-        // 2) UPDATE ITERATION TO CHANGE INFORMATION THAT APPEARS ON THE FORM
-        setIteration(i+1)
+        let key = "log_" + listOfKeys[i];
 
+        // 1) STORE INFORMATION IN CORRECT OBJECT KEY PER REACT  STANDAREDS
+        if (!logData) {
+            setLogData({key: text })
+        }
+        // 2) UPDATE ITERATION TO CHANGE INFORMATION THAT APPEARS ON THE FORM
+        if (logData) {
+            let rawData = logData
+            rawData[key] = text
+            setLogData(rawData)
+        }
+        setIteration(i + 1)
+        
         console.log(logData)
        
-    }
+    };
 
     // BE SMART ABOUT WHEN TO IMPLEMENT SUBMITTING THE LOG
 
@@ -55,7 +54,7 @@ function AddLog(props) {
         <MainOverlay>
             <div className={styles["add-log-container"]}>
                 <OverlayTab text="Add a Log" />
-                <AddLogForm submitInputHandler={submitInputHandler} inputTitle={listOfTitles[iteration]} inputTitleDescription={listOfTitleText[iteration]} />
+                <AddLogForm submitInputHandler={submitInputHandler} inputTitle={listOfTitles[iteration]} inputTitleDescription={listOfTitleText[iteration]} testObjectUpdate={logData} />
                 <OverlayTab text="X" onClick={props.toggleAddLog} />
             </div>
         </MainOverlay>

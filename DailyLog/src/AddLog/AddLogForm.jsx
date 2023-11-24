@@ -1,11 +1,17 @@
-import React, { useState } from 'react'
+import React, { useState ,useEffect, useRef } from 'react'
 
 // CUSTOM STYLE FILE IMPORTS
 import styles from './AddLogForm.module.css'
 
 function AddLogForm(props) {
 
-    const [inputValue, setInputValue] = useState(undefined)
+    const [inputValue, setInputValue] = useState("")
+
+    const mainInput = useRef(null)
+    // MAKE IT SO THE INOPPUT IS FOCUSED RIGHT WHEN THE OVERLAY POPUPS AND FOR THE START OF EACH NEW QUESTION
+    useEffect(() => {
+       mainInput.current.focus() 
+    },[])
 
     function inputValueHandler(e) {
         e.preventDefault();
@@ -19,6 +25,7 @@ function AddLogForm(props) {
             props.submitInputHandler(inputValue);
         }
         e.preventDefault()
+        setInputValue("")
     }
     
     return (
@@ -26,10 +33,9 @@ function AddLogForm(props) {
                     <div className={styles["add-log-form-container"]}>
                 <label>{props.inputTitle}</label>
                 <span className={styles.description}>"{props.inputTitleDescription}"</span>
-                        <input className={styles["text-input"]} type="text" onChange={inputValueHandler} />
-
+                <input className={styles["text-input"]} type="text" value={inputValue} onChange={inputValueHandler} ref={mainInput} />
                         <input type="submit" value="Submit" />
-                    </div>
+            </div>
                 </form>
     )
 }

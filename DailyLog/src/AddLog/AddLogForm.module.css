@@ -6,9 +6,19 @@
 .add-log-form-container{
     height: 100%;
     width: 100%;
-    background-color: red;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
+}
+
+.add-log-form-container input{
+    height: auto;
+    font-size: 1.44rem;
+    padding: 1rem;
+    border-radius: 20px;
+}
+
+.description{
+    font-size: 0.88rem;
 }

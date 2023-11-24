@@ -12,7 +12,7 @@ import styles from "./AddLog.module.css"
 const listOfTitleText = ["Enter a title for your log", "Is this log for keeping track of a tally? (ex: pushups, glasses of water, number of poops) or is it about a task you completed over a chunk of time (ex: dishes, groceries, pet-projects, yard-work)", "What did this task require you to do", "What time did you start this task" , "What time did you finish this task", "How many tallys would you like to add?"];
 const listOfTitles = ["Log Title", "Log Type", "Log Description", "Log Start Time", "Log End Time", "Count"];
 
-const listOfKeys= ["title", "type", "description", "start_time", "end_time", "count"];
+var listOfKeys= ["title", "type", "description", "start_time", "end_time", "count"];
 
 function AddLog(props) {
 
@@ -33,12 +33,14 @@ function AddLog(props) {
 
         // SET UP THE COMMON PREFIXES AUTOMATICALLY PER THE ITERATION
         let commonText = "log_";
-        let i = iteration;
-        let rawKey = listOfKeys[i]
+        let i = parseInt(iteration);
+        let rawKey = listOfKeys[i];
         let key = commonText + rawKey;
+        key = logData[key];
         let value = text;
+        let property = {key: value}
         // 1) STORE INFORMATION IN CORRECT OBJECT KEY PER REACT  STANDAREDS
-        setLogData(...logData, ...{ key: value }  )
+        setLogData({ ...logData, property } )
         // 2) UPDATE ITERATION TO CHANGE INFORMATION THAT APPEARS ON THE FORM
         setIteration(i+1)
 
@@ -56,7 +58,7 @@ function AddLog(props) {
         <MainOverlay>
             <div className={styles["add-log-container"]}>
                 <OverlayTab text="Add a Log" />
-                <AddLogForm submitInputHandler={submitInputHandler} inputTitle={listOfTitles[iteration]} />
+                <AddLogForm submitInputHandler={submitInputHandler} inputTitle={listOfTitles[iteration]} inputTitleDescription={listOfTitleText[iteration]} />
                 <OverlayTab text="X" onClick={props.toggleAddLog} />
             </div>
         </MainOverlay>

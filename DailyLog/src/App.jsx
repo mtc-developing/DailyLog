@@ -12,27 +12,21 @@ import AddLog from './AddLog/AddLog.jsx'
 import styles from './App.module.css'
 
 const DUMMY_LIST_OF_LOGS = [{
-  log_title: "dishes",
-  log_type: "home chores",
-  log_description: "unloaded 2 full loads, loaded 2, handwashed and dried, put aweay",
-  log_start_time: "4:22pm",
-  log_end_time: "5:30pm",
-  log_count: null,
+  log_title: "EMPTY",
+  log_type: "empty",
+  log_description: "your list of logs is emmpty",
+  log_start_time: "earlier",
+  log_end_time: "later",
+  log_count: 0,
   log_dummy_test: true
-},
-{
-  log_title:"react coding",
-  log_type:"web dev" ,
-  log_description:"worked on daily log app, style updates and functionality for different log types" ,
-  log_start_time:"6:30pm" ,
-  log_end_time:"8:00pm" ,
-  log_count: null
-  }]
+}]
+
+  const localStorage=window.localStorage
 
 function App() {
   const [introFinished, setIntroFinished] = useState(true);
 
-  const [logList, setLogList] = useState(DUMMY_LIST_OF_LOGS)
+  const [logList, setLogList] = useState(JSON.parse(localStorage.getItem("logList")))
 
   // STATES FOR LIVE TIME
   const [liveTime, setLiveTime] = useState(new Date());
@@ -42,7 +36,17 @@ function App() {
   const [activeViewLogOverlay, setActiveViewLogOverlay] = useState(false);
   const [settingsActive, setSettingsActive] = useState(false);
   const [addLogActive, setAddLogActive] = useState(false);
-  
+
+  useEffect(() => {
+    if (!logList[0].log_title) {
+      setLogList(DUMMY_LIST_OF_LOGS)
+    }
+  }, [])
+
+  useEffect(() => {
+    localStorage.setItem("logList", JSON.stringify(logList))
+  }, [logList])
+
   useEffect(() => {
     setTimeout(function () {
       setIntroFinished(true)

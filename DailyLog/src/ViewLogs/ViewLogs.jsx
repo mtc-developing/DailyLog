@@ -15,11 +15,6 @@ function keyFinder() {
 function ViewLogs(props) {
 
     const logListTest=props.logList
-    const [activeLogList, setActiveLogList] = useState( () => {
-     return(logListTest.length>=1)
- })
-    // const listOfLogTasks = props.logList
-    // const testObjectArray = DUMMY_LIST_OF_LOGS.filter((log) => log.log_type == "task")
 
     const myLogObjectArray = logListTest.map((log) => {
         return (
@@ -33,12 +28,9 @@ function ViewLogs(props) {
         <MainOverlay>
             <div className={styles["main-container"]}>
                 <OverlayTab text="today" />
-                {!activeLogList && (<div className={styles.container}>
-                    {testObjectArray}
-                    </div>)}
-                {activeLogList && (<div className={styles.container}>
+                <div className={styles.container}>
                     {myLogObjectArray}
-                </div>)}
+                </div>
                 <OverlayTab text="X" onClick={props.toggleViewLogsOverlay} />
         
             </div>

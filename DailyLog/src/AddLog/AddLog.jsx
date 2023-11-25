@@ -38,15 +38,18 @@ function AddLog(props) {
             rawData[key] = text
             setLogData(rawData)
         }
-        setIteration(i + 1)
+        setIteration(i + 1);
+        if (iteration >= 4) {
+            submitLogHandler();
+            setLogData({})
+       }
         
-        console.log(logData)
-       
     };
 
     // BE SMART ABOUT WHEN TO IMPLEMENT SUBMITTING THE LOG
 
     function submitLogHandler() {
+        props.addLogHandler(logData)
         
     }
 

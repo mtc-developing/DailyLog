@@ -1,29 +1,49 @@
-import React from 'react';
+import React , {useState} from 'react';
 
 // MY CUSTOM UI COMPONENT IMPORTS
 import OverlayTab from '../UIComponents/OverlayTab/OverlayTab';
 import LogCard from '../UIComponents/LogCard/LogCard';
+import MainOverlay from "../UIComponents/MainOverlay/MainOverlay"
 
 // MY CUSTOM STYLE IMPORTS
 import styles from "./ViewLogs.module.css";
 
-function ViewLog(props) {
-    
+function keyFinder() {
+        return (Math.random(1)*Math.random(1)*Math.random(1))
+    }
+
+function ViewLogs(props) {
+
+    const logListTest=props.logList
+    const [activeLogList, setActiveLogList] = useState( () => {
+     return(logListTest.length>=1)
+ })
+    // const listOfLogTasks = props.logList
+    // const testObjectArray = DUMMY_LIST_OF_LOGS.filter((log) => log.log_type == "task")
+
+    const myLogObjectArray = logListTest.map((log) => {
+        return (
+            <LogCard key={keyFinder()} logCardCategory={log.log_type} logCardTitle={log.log_title} logCardDuration={"45m"} logCardStartTime={log.log_start_time} logCardEndTime={log.log_end_time} logCardDescription={log.log_description} />
+        )
+    })
+
     return (
 
-        <div className={styles["main-container"]}>
-            <OverlayTab text="today" />
-            <div className={styles.container}>
-                <LogCard logCardCategory="home chores" logCardTitle="dishes" logCardDuration="45m" logCardStartTime="12:25pm" logCardEndTime="1:10pm" logCardDescription="I tend to do my dishes quite well, and now that I will only have to do my own, I am thrilled." />
-                <LogCard logCardCategory="home chores" logCardTitle="dishes" logCardDuration="45m" logCardStartTime="12:25pm" logCardEndTime="1:10pm" logCardDescription="I tend to do my dishes quite well, and now that I will only have to do my own, I am thrilled." />
-                <LogCard logCardCategory="home chores" logCardTitle="dishes" logCardDuration="45m" logCardStartTime="12:25pm" logCardEndTime="1:10pm" logCardDescription="I tend to do my dishes quite well, and now that I will only have to do my own, I am thrilled." />
-                <LogCard logCardCategory="home chores" logCardTitle="dishes" logCardDuration="45m" logCardStartTime="12:25pm" logCardEndTime="1:10pm" logCardDescription="I tend to do my dishes quite well, and now that I will only have to do my own, I am thrilled." />
-                <LogCard logCardCategory="home chores" logCardTitle="dishes" logCardDuration="45m" logCardStartTime="12:25pm" logCardEndTime="1:10pm" logCardDescription="I tend to do my dishes quite well, and now that I will only have to do my own, I am thrilled."/>
-            </div>
-            <OverlayTab text="X" onClick={props.toggleViewLogsOverlay} />
+
+        <MainOverlay>
+            <div className={styles["main-container"]}>
+                <OverlayTab text="today" />
+                {!activeLogList && (<div className={styles.container}>
+                    {testObjectArray}
+                    </div>)}
+                {activeLogList && (<div className={styles.container}>
+                    {myLogObjectArray}
+                </div>)}
+                <OverlayTab text="X" onClick={props.toggleViewLogsOverlay} />
         
-        </div>
+            </div>
+        </MainOverlay>
     )
 }
 
-export default ViewLog
+export default ViewLogs;

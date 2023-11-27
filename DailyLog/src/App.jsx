@@ -38,7 +38,7 @@ function App() {
   const [addLogActive, setAddLogActive] = useState(false);
 
   useEffect(() => {
-    if (!logList[0].log_title) {
+    if (!logList || !logList[0].log_title) {
       setLogList(DUMMY_LIST_OF_LOGS)
     }
   }, [])

@@ -7,14 +7,19 @@ import MainOverlay from '../UIComponents/MainOverlay/MainOverlay.jsx';
 import styles from './Settings.module.css';
 
 function Settings(props) {
+
+    function triggerIntroAnimationHandler() {
+        props.introAnimation()
+    }
+
     return (
         <MainOverlay>
             <div className={styles.settings}>
                 <span>WEATHER</span>
                 <span>TUTORIAL</span>
-                <span>ABOUT ME</span>
+                <span onClick={triggerIntroAnimationHandler}>INTRO ANIMATION</span>
                 <span>REFRESH</span>
-                <span onClick={props.toggleSettings}>QUIT</span>
+                <span onClick={props.toggleSettings}>CLOSE</span>
             </div>
             <div className={styles.text}>
                 <div>"This si where I will provide the information for any options that ned explaining or a call to action button"</div>

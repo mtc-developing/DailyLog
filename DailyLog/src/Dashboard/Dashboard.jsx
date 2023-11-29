@@ -5,15 +5,16 @@ import styles from "./Dashboard.module.css";
 // CREATE AN api CALL TO GET WEATHER UPDATES FOR DASHBOARD
 // USE A 3RD PARTY PACKAGE TO FACILITATE DATE/TIME FRAMES IF USED
 
-function correctHour(h) {
-    let bad = h;
-    bad = parseInt(bad);
-    if(bad <= 12) {
-        return bad
+function correctHour(rawHour) {
+    let bad = parseInt(rawHour);
+    if (bad === 0) {
+        return 12
     }
     if (bad > 12) {
-        return(bad-12) 
+        return (bad - 12)
     }
+    return bad
+    
 }
 
 function correctTimeframe(rawHour){

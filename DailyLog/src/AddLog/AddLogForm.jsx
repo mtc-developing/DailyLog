@@ -34,7 +34,7 @@ function AddLogForm(props) {
                 <label>{props.inputTitle}</label>
                 <span className={styles.description}>"{props.inputTitleDescription}"</span>
                 <input className={styles["text-input"]} type="text" value={inputValue} onChange={inputValueHandler} ref={mainInput} />
-                        <input type="submit" value="Submit" />
+                        <input type="submit" value="Submit" onClick={submitInputHandler} />
             </div>
                 </form>
     )

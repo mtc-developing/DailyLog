@@ -52,7 +52,7 @@ function App() {
       setIntroFinished(true)
       console.log("Set intro finished to true")
     }, 11000)
-  }, [])
+  }, [,introFinished])
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -103,13 +103,17 @@ function App() {
     return
   }
 
+  function introAnimation() {
+    setIntroFinished(false)
+  }
+
   return (
     <>
       <MainBackground />
 
       {/* THIS IS THE MAIN OVERLAY FOR POPUPS OR COPOPNENTS THAT REQUIRE PRECEDENCE IN DISPLAY */}
       {activeViewLogOverlay && <ViewLogs toggleViewLogsOverlay={toggleViewLogsOverlay} logList={logList} />}
-      {settingsActive && <Settings toggleSettings={toggleSettingsHandler} />}
+      {settingsActive && <Settings toggleSettings={toggleSettingsHandler} introAnimation={introAnimation} />}
       {addLogActive && <AddLog toggleAddLog={toggleAddLogHandler} addLogHandler={addLogHandler} />}
 
       {/* THIS IS WHERE THE INTRO ANIMATIONS LIVE */}

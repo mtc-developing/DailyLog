@@ -18,7 +18,7 @@ const DUMMY_LIST_OF_LOGS = [{
   log_start_time: "earlier",
   log_end_time: "later",
   log_count: 0,
-  log_dummy_test: true
+  log_dummy_test: false
 }]
 
   const localStorage=window.localStorage
@@ -38,7 +38,7 @@ function App() {
   const [addLogActive, setAddLogActive] = useState(false);
 
   useEffect(() => {
-    if (!logList || !logList[0].log_title) {
+    if (logList.length==0 || !logList[0].log_title) {
       setLogList(DUMMY_LIST_OF_LOGS)
     }
   }, [])
@@ -107,12 +107,17 @@ function App() {
     setIntroFinished(false)
   }
 
+  function deleteLogHandler(logTitle) {
+    const filteredList = logList.filter(log => log.log_title != logTitle)
+    setLogList(filteredList)
+  }
+
   return (
     <>
       <MainBackground />
 
       {/* THIS IS THE MAIN OVERLAY FOR POPUPS OR COPOPNENTS THAT REQUIRE PRECEDENCE IN DISPLAY */}
-      {activeViewLogOverlay && <ViewLogs toggleViewLogsOverlay={toggleViewLogsOverlay} logList={logList} />}
+      {activeViewLogOverlay && <ViewLogs toggleViewLogsOverlay={toggleViewLogsOverlay} logList={logList} deleteLog={deleteLogHandler} />}
       {settingsActive && <Settings toggleSettings={toggleSettingsHandler} introAnimation={introAnimation} />}
       {addLogActive && <AddLog toggleAddLog={toggleAddLogHandler} addLogHandler={addLogHandler} />}
 

@@ -14,11 +14,15 @@ function keyFinder() {
 
 function ViewLogs(props) {
 
+    function deleteLogHandler(log) {
+        props.deleteLog(log)
+    }
+
     const logListTest=props.logList
 
     const myLogObjectArray = logListTest.map((log) => {
         return (
-            <LogCard key={keyFinder()} logCardCategory={log.log_type} logCardTitle={log.log_title} logCardDuration={"45m"} logCardStartTime={log.log_start_time} logCardEndTime={log.log_end_time} logCardDescription={log.log_description} />
+            <LogCard key={keyFinder()} logCardCategory={log.log_type} logCardTitle={log.log_title} logCardDuration={"45m"} logCardStartTime={log.log_start_time} logCardEndTime={log.log_end_time} logCardDescription={log.log_description} deleteLog={deleteLogHandler} />
         )
     })
 

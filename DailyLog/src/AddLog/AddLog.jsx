@@ -9,10 +9,10 @@ import AddLogForm from './AddLogForm.jsx';
 import styles from "./AddLog.module.css"
 
 // ATTEMPTING TO USE A VAR TO HOLD INMFORMATION FOR WHICH LOG FORM QUESTION WE ARE ON
-const listOfTitleText = ["Enter a title for your log", "Is this log for keeping track of a tally? (ex: pushups, glasses of water, number of poops) or is it about a task you completed over a chunk of time (ex: dishes, groceries, pet-projects, yard-work)", "What did this task require you to do", "What time did you start this task" , "What time did you finish this task", "How many tallys would you like to add?"];
-const listOfTitles = ["Log Title", "Log Type", "Log Description", "Log Start Time", "Log End Time", "Count"];
+const listOfTitleText = ["Enter a title for your log",  "What did this task require you to do", "What time did you start this task" , "What time did you finish this task", "How many tallys would you like to add?"];
+const listOfTitles = ["Log Title", "Description", "Start Time", "End Time"];
 
-var listOfKeys= ["title", "type", "description", "start_time", "end_time", "count"];
+var listOfKeys= ["title", "description", "start_time", "end_time"];
 
 function AddLog(props) {
 
@@ -24,34 +24,23 @@ function AddLog(props) {
 
     function submitInputHandler(text) {
 
-        // SET UP THE COMMON PREFIXES AUTOMATICALLY PER THE ITERATION
-        let i = parseInt(iteration);
-        let key = "log_" + listOfKeys[i];
+        let key = "log_" + listOfKeys[iteration];
 
-        // 1) STORE INFORMATION IN CORRECT OBJECT KEY PER REACT  STANDAREDS
         if (!logData) {
             setLogData({key: text })
         }
-        // 2) UPDATE ITERATION TO CHANGE INFORMATION THAT APPEARS ON THE FORM
+
         if (logData) {
             let rawData = logData
             rawData[key] = text
             setLogData(rawData)
         }
-        setIteration(i + 1);
-        if (iteration >= 4) {
-            submitLogHandler();
+        setIteration(iteration+1);
+        if (iteration>=listOfKeys.length-1) {
+            props.addLogHandler(logData)
             setLogData({})
        }
-        
     };
-
-    // BE SMART ABOUT WHEN TO IMPLEMENT SUBMITTING THE LOG
-
-    function submitLogHandler() {
-        props.addLogHandler(logData)
-        
-    }
 
     return (
         <MainOverlay>

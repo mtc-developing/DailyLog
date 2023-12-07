@@ -33,6 +33,7 @@ function ViewLogs(props) {
             <div className={styles["main-container"]}>
                 <OverlayTab text="today" />
                 <div className={styles.container}>
+                    {props.logList.length===0 && <span>You have not logged anything today</span>}
                     {myLogObjectArray}
                 </div>
                 <OverlayTab text="X" onClick={props.toggleViewLogsOverlay} />

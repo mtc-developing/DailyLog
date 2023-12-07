@@ -12,20 +12,19 @@ import AddLog from './AddLog/AddLog.jsx'
 import styles from './App.module.css'
 
 const DUMMY_LIST_OF_LOGS = [{
-  log_title: "EMPTY",
-  log_type: "empty",
-  log_description: "your list of logs is emmpty",
-  log_start_time: "earlier",
-  log_end_time: "later",
+  log_title: "Grocery/Errands",
+  log_type: "Family",
+  log_description: "Went to market basket for their weekly groceries, CVS for diapers and meds, and the mill for their favorite coffee",
+  log_start_time: "12:30pm",
+  log_end_time: "2:00pm",
   log_count: 0,
-  log_dummy_test: false
 }]
 
   const localStorage=window.localStorage
 
 function App() {
-  const [introFinished, setIntroFinished] = useState(true);
-
+  
+  // MAIN APP LIST OF LOG OBJECTS, EVENTUALLY TO LIVE IN SOME SORT OF BACKEND, NBBUT FOR NOW LIVES IN LOCAL STORAGE
   const [logList, setLogList] = useState(JSON.parse(localStorage.getItem("logList")))
 
   // STATES FOR LIVE TIME
@@ -33,6 +32,7 @@ function App() {
   const [count, setCount] = useState(0);
 
   // STATES FOR TOGGLE OVERLAY COMPONENT DISPLAY
+  const [introFinished, setIntroFinished] = useState(true);
   const [activeViewLogOverlay, setActiveViewLogOverlay] = useState(false);
   const [settingsActive, setSettingsActive] = useState(false);
   const [addLogActive, setAddLogActive] = useState(false);
@@ -62,6 +62,10 @@ function App() {
 
     return () => clearInterval(interval)
   }, [count])
+
+  function introAnimation() {
+    setIntroFinished(false)
+  }
 
   // TOGGLE VIEW HANDLING FOR EACH OVERLAY COMPONENT
 
@@ -93,7 +97,7 @@ function App() {
 
   // FUNCTIONALITY FOR UPDATING LIST OF LOG OBJECTS
   function addLogHandler(logObject) {
-    if (logList[0].log_dummy_test) {
+    if (logList.length === 0) {
       setLogList([ logObject ])
       toggleAddLogHandler();
       return
@@ -101,10 +105,6 @@ function App() {
     setLogList([...logList, logObject ])
     toggleAddLogHandler();
     return
-  }
-
-  function introAnimation() {
-    setIntroFinished(false)
   }
 
   function deleteLogHandler(logTitle) {

@@ -50,8 +50,7 @@ function App() {
   useEffect(() => {
     setTimeout(function () {
       setIntroFinished(true)
-      console.log("Set intro finished to true")
-    }, 11000)
+    }, 13000)
   }, [,introFinished])
 
   useEffect(() => {
@@ -64,6 +63,7 @@ function App() {
   }, [count])
 
   function introAnimation() {
+    toggleSettingsHandler()
     setIntroFinished(false)
   }
 

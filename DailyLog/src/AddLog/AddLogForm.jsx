@@ -8,10 +8,10 @@ function AddLogForm(props) {
     const [inputValue, setInputValue] = useState("")
 
     const mainInput = useRef(null)
-    // MAKE IT SO THE INOPPUT IS FOCUSED RIGHT WHEN THE OVERLAY POPUPS AND FOR THE START OF EACH NEW QUESTION
+
     useEffect(() => {
        mainInput.current.focus() 
-    },[])
+    },[props.inputTitle])
 
     function inputValueHandler(e) {
         e.preventDefault();

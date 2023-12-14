@@ -42,3 +42,9 @@
     height: 2.22rem;
     padding-top: 1rem;
 }
+
+.input{
+    height: 2rem;
+    border: 1px solid rgb(4,22,88);
+    font-weight: bold;
+}

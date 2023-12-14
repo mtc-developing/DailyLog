@@ -119,7 +119,7 @@ function App() {
       {/* THIS IS THE MAIN OVERLAY FOR POPUPS OR COPOPNENTS THAT REQUIRE PRECEDENCE IN DISPLAY */}
       {activeViewLogOverlay && <ViewLogs toggleViewLogsOverlay={toggleViewLogsOverlay} logList={logList} deleteLog={deleteLogHandler} />}
       {settingsActive && <Settings toggleSettings={toggleSettingsHandler} introAnimation={introAnimation} />}
-      {addLogActive && <AddLog toggleAddLog={toggleAddLogHandler} addLogHandler={addLogHandler} />}
+      {addLogActive && <AddLog toggleAddLog={toggleAddLogHandler} addLogHandler={addLogHandler} liveTime={liveTime} />}
 
       {/* THIS IS WHERE THE INTRO ANIMATIONS LIVE */}
       {!introFinished && <Title />}

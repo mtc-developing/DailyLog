@@ -12,7 +12,9 @@ import styles from "./AddLog.module.css"
 const listOfTitleText = ["Enter a title for your log",  "What did this task require you to do", "What time did you start this task" , "What time did you finish this task", "How many tallys would you like to add?"];
 const listOfTitles = ["Log Title", "Description", "Start Time", "End Time"];
 
-var listOfKeys= ["title", "description", "start_time", "end_time"];
+var listOfKeys = ["title", "description", "start_time", "end_time"];
+
+const daysOfWeek = ["Sunday","Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
 
 function AddLog(props) {
 
@@ -21,6 +23,9 @@ function AddLog(props) {
     const [iteration, setIteration] = useState(0);
 
     const [logData, setLogData] = useState({});
+    const liveTime = props.liveTime;
+    const dayOfWeek = daysOfWeek[liveTime.getDay()];
+    const numberDay = liveTime.getDate();
 
     function submitInputHandler(text) {
 
@@ -36,7 +41,10 @@ function AddLog(props) {
             setLogData(rawData)
         }
         setIteration(iteration+1);
-        if (iteration>=listOfKeys.length-1) {
+        if (iteration >= listOfKeys.length - 1) {
+            // ADD THE DATE AT THE VERY END RIGHT HERE
+            logData.weekday = dayOfWeek;
+            logData.monthDay = numberDay;
             props.addLogHandler(logData)
             setLogData({})
        }

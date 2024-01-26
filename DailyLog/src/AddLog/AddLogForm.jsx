@@ -27,6 +27,9 @@ function AddLogForm(props) {
         e.preventDefault()
         setInputValue("")
     }
+
+    // we need to change the whole premise of this coponent in order to be able
+    // to change the input style to acomodate for our startv end time uopdated needs
     
     return (
                 <form className={styles["add-log-body"]} onSubmit={submitInputHandler}>

@@ -36,6 +36,8 @@ function AddLogForm(props) {
                     <div className={styles["add-log-form-container"]}>
                 <label>{props.inputTitle}</label>
                 <span className={styles.description}>"{props.inputTitleDescription}"</span>
+
+                {/* THIS IS THE COMPONENT SECTION FOR EL;EMENTS THAT WILL CHANGE DEPOENDING ON USER-STATE */}
                 <input className={styles["text-input"]} type="text" value={inputValue} onChange={inputValueHandler} ref={mainInput} />
                         <input type="submit" value="Submit" onClick={submitInputHandler} className={styles.button} />
             </div>

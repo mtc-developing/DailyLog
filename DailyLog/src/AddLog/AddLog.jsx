@@ -57,8 +57,9 @@ function AddLog(props) {
             <div className={styles["add-log-container"]}>
                 <OverlayTab text="Add a Log" />
                 {/* Have 2 conditional statementss to handle which form we see */}
-                {numFormActive && <NumForm submitInputHandler={submitInputHandler} />}
-                <AddLogForm submitInputHandler={submitInputHandler} inputTitle={listOfTitles[iteration]} inputTitleDescription={listOfTitleText[iteration]} testObjectUpdate={logData} />
+                {numFormActive && <NumForm submitInputHandler={submitInputHandler} inputTitle={listOfTitles[iteration]} inputTitleDescription={listOfTitleText[iteration]} testObjectUpdate={logData} />}
+                {!numFormActive && <AddLogForm submitInputHandler={submitInputHandler} inputTitle={listOfTitles[iteration]} inputTitleDescription={listOfTitleText[iteration]} testObjectUpdate={logData} /> }
+                
                 <OverlayTab text="X" onClick={props.toggleAddLog} />
             </div>
         </MainOverlay>

@@ -1,11 +1,7 @@
 .NumForm{
-    height:100vh;
-    width: 400px;
-    position:fixed;
-    z-index:500;
-    border: 40px solid red;
-    background-color:black;
+    height:100%;
+    width: 100%;
     color:white;
-    padding: 3rem;
-    font-size: 2rem;
+    text-shadow: 1px 1px 1px rgb(4,22,88);
+    font-weight: bold;
 }

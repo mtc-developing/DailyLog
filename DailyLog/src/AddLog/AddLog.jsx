@@ -4,6 +4,7 @@ import React , {useState} from 'react';
 import MainOverlay from "../UIComponents/MainOverlay/MainOverlay.jsx";
 import OverlayTab from '../UIComponents/OverlayTab/OverlayTab.jsx';
 import AddLogForm from './AddLogForm.jsx';
+import NumForm from './NumForm';
 
 // CUSTOM STYLE FILES IMPORT
 import styles from "./AddLog.module.css"
@@ -26,6 +27,7 @@ function AddLog(props) {
     const liveTime = props.liveTime;
     const dayOfWeek = daysOfWeek[liveTime.getDay()];
     const numberDay = liveTime.getDate();
+    const [numFormActive, setNumFormActive] = useState(true)
 
     function submitInputHandler(text) {
 
@@ -54,6 +56,8 @@ function AddLog(props) {
         <MainOverlay>
             <div className={styles["add-log-container"]}>
                 <OverlayTab text="Add a Log" />
+                {/* Have 2 conditional statementss to handle which form we see */}
+                {numFormActive && <NumForm submitInputHandler={submitInputHandler} />}
                 <AddLogForm submitInputHandler={submitInputHandler} inputTitle={listOfTitles[iteration]} inputTitleDescription={listOfTitleText[iteration]} testObjectUpdate={logData} />
                 <OverlayTab text="X" onClick={props.toggleAddLog} />
             </div>

@@ -4,7 +4,7 @@ import React , {useState} from 'react';
 import MainOverlay from "../UIComponents/MainOverlay/MainOverlay.jsx";
 import OverlayTab from '../UIComponents/OverlayTab/OverlayTab.jsx';
 import AddLogForm from './AddLogForm.jsx';
-import NumForm from './NumForm';
+import NumForm from './NumForm.jsx';
 
 // CUSTOM STYLE FILES IMPORT
 import styles from "./AddLog.module.css"

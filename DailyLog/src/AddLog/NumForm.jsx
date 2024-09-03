@@ -7,18 +7,24 @@ import styles from './NumForm.module.css'
 
 function NumForm(props) {
 
+    const [time, setTime] = useState("")
     
     return (
-        <form className={styles.NumForm} onSubmit={submitInputHandler}>
-                    <div className={styles["add-log-form-container"]}>
-                    <label>{props.inputTitle}</label>
-                    <span className={styles.description}>"{props.inputTitleDescription}"</span>
-
-                    {/* THIS IS THE COMPONENT SECTION FOR EL;EMENTS THAT WILL CHANGE DEPOENDING ON USER-STATE */}
-                    <input className={styles["text-input"]} type="text" value={inputValue} onChange={inputValueHandler} ref={mainInput} />
-                            <input type="submit" value="Submit" onClick={submitInputHandler} className={styles.button} />
-                    </div>
-                </form>
+        <div className={styles.NumForm}>
+            <div>0</div>
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+            <div>9</div>
+            <div>AM</div>
+            <div>PM</div>
+            <div>clear</div>
+        </div>
     )
 }
 

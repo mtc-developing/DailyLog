@@ -27,7 +27,7 @@ function AddLog(props) {
     const liveTime = props.liveTime;
     const dayOfWeek = daysOfWeek[liveTime.getDay()];
     const numberDay = liveTime.getDate();
-    const [numFormActive, setNumFormActive] = useState(true)
+    const [numFormActive, setNumFormActive] = useState(false)
 
     function submitInputHandler(text) {
 
@@ -42,6 +42,10 @@ function AddLog(props) {
             rawData[key] = text
             setLogData(rawData)
         }
+
+        // need a function to handle the change in iteration to change the form that pops up
+        // as well as a function for calculating the time  it took to completeb the task
+        
         setIteration(iteration+1);
         if (iteration >= listOfKeys.length - 1) {
             // ADD THE DATE AT THE VERY END RIGHT HERE

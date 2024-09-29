@@ -7,10 +7,21 @@ import styles from './NumForm.module.css'
 
 function NumForm(props) {
 
-    const [time, setTime] = useState("4:20pm")
+    const [time, setTime] = useState("")
 
     function clickHandler(value) {
-        setTime(value)
+
+        if (value === "submit") {
+            // HERE WE NEED TO LIFT UP THE STATE
+            props.submitInputHandler(time)
+            value = "clear"
+        }
+
+        if (value === "clear") {
+            setTime("")
+        } else {
+            setTime(time + value)
+        }
     }
     
     return (
@@ -28,9 +39,10 @@ function NumForm(props) {
             <div onClick={() =>clickHandler("am")}>AM</div>
             <div onClick={() =>clickHandler("pm")}>PM</div>
             <div onClick={() =>clickHandler(":")}>:</div>
-            <div onClick={() =>clickHandler("")}>cl</div>
-            <div onClick={() =>clickHandler("add")}>ADD</div>
-            <div value="" className={styles["time-display"]}> {time} </div>
+            <div onClick={() =>clickHandler("clear")}>cl</div>
+            <div onClick={() => clickHandler("submit")}>ADD</div>
+            <div style={{"font-size": '1.6rem', border: 'none' , background:'none'}}>{props.inputTitle}</div>
+            <div className={styles["time-display"]} style={{border: 'none' , background:'none'}}> {time} </div>
         </div>
     )
 }

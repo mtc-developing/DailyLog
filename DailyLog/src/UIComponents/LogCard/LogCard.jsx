@@ -3,14 +3,8 @@ import React from 'react';
 // MY CUSTOM STYLE FILES
 import styles from './LogCard.module.css';
 
-function calculateDuration(start, end) {
-    // neeed raw times
-}
-
 function LogCard(props) {
 
-    // this section could likely be causing issues, do not merge to master branch yet
-    const duration = calculateDuration(props.logCardStartTime, props.logCardEndTime) || "45min";
 
     function deleteLogHandler() {
         props.deleteLog(props.logCardTitle)

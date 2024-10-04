@@ -18,9 +18,29 @@ function ViewLogs(props) {
         props.deleteLog(log)
     }
 
-    const logListTest=props.logList
+    const logListTest = props.logList
+    
+    const morningList = logListTest.filter(log => log.log_start_time.includes("am"));
+    const nightList = logListTest.filter(log => log.log_start_time.includes("pm"));
 
-    const myLogObjectArray = logListTest.map((log) => {
+    // must adjust for 12:00 pm being earlier in the day than 1
+
+    const noonList = logListTest.filter(log => log.log_start_time[0] == "1" && log.log_start_time[1] == "2" && log.log_start_time[2] == ":");
+
+    const afternoonList = logListTest.filter(log => log.log_start_time[0] != "1" && log.log_start_time[1] != "2" && log.log_start_time[2] != ":")
+
+    const adjustedNoonList = noonList.sort((a,b) => a.log_start_time - b.log_start_time)
+
+    const adjustedMorningList = morningList.sort((a, b) => a.log_start_time - b.log_start_time);
+    const adjustedNightList = afternoonList.sort((a, b) => a.log_start_time - b.log_start_time);
+
+    console.log(morningList)
+    console.log(nightList)
+
+    const almostFinalLogList = adjustedMorningList.concat(adjustedNoonList)
+    const finalLogList = almostFinalLogList.concat(adjustedNightList)
+
+    const myLogObjectArray = finalLogList.map((log) => {
         return (
             <LogCard key={keyFinder()} logCardCategory={log.log_type} logCardTitle={log.log_title} logCardDuration={"45m"} logCardStartTime={log.log_start_time} logCardEndTime={log.log_end_time} logCardDescription={log.log_description} deleteLog={deleteLogHandler} />
         )

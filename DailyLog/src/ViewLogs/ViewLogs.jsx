@@ -48,12 +48,12 @@ function ViewLogs(props) {
 
         <MainOverlay>
             <div className={styles["main-container"]}>
-                <OverlayTab text="back" onClick={props.toggleViewLogsOverlay} />
+                <OverlayTab text="close" onClick={props.toggleViewLogsOverlay} />
                 <div className={styles.container}>
                     {props.logList.length===0 && <span>You have not logged anything today</span>}
                     {myLogObjectArray}
                 </div>
-                <OverlayTab text="Date" />
+                <OverlayTab text="your logs" />
         
             </div>
         </MainOverlay>

@@ -6,16 +6,16 @@ import MainOverlay from '../UIComponents/MainOverlay/MainOverlay.jsx';
 // CUSTOM STLYE IMPORTS
 import styles from './Settings.module.css';
 
-const TEXT_FILLERS = ["You come here often?", "Did it hurt?", "When you fell from heaven?", "JK you ugly as SHIT", "Hahaha ok enough fucking around...", "Seriously, go use the app", "GO USE THE APP!!", "THIS ISNT FUNNY ANYMORE", "You know what, you're going to regret this...", "ha", "hahaha....", "HAHAHAHAHAHAHAHAHA"]
+const TEXT_FILLERS = ["You come here often?", "Did it hurt?", "When you fell from heaven?", "I lost my number, can I have yours?", "Hahaha ok enough fucking around...", "Seriously, go use the app", "GO USE THE APP!!", "THIS ISNT FUNNY ANYMORE", "You know what, you're going to regret this...", "ha", "hahaha....", "HAHAHAHAHAHAHAHAHA"]
 
 var text = "What's up you sexy little bitch";
-var textCount = 0;
 
 function Settings(props) {
 
     const [emailInput, setEmailInput] = useState(false)
     const [inputValue, setInputValue] = useState("")
     const [openingPage, setOpeningPage] = useState(true)
+    const [textCount, setTextCount] = useState(0);
     
     const mainInput = useRef(null)
 
@@ -61,15 +61,13 @@ function Settings(props) {
 
     function buttonHandler() {
         if (openingPage) {
-            console.log("opening page button activated")
-            textCount=textCount + 1;
+            setTextCount(textCount+1)
             text = TEXT_FILLERS[textCount];
             
             return
         };
         if (emailInput) {
             localStorage.setItem("userEmail", inputValue);
-            console.log("daily log has saved your email: " + inputValue);
         };
     }
 

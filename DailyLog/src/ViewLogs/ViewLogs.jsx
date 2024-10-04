@@ -51,7 +51,7 @@ function ViewLogs(props) {
                     {props.logList.length===0 && <span>You have not logged anything today</span>}
                     {myLogObjectArray}
                 </div>
-                <OverlayTab text="Cain Creative" />
+                <OverlayTab text="Date" />
         
             </div>
         </MainOverlay>

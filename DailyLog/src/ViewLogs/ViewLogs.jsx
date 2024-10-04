@@ -23,11 +23,9 @@ function ViewLogs(props) {
     const morningList = logListTest.filter(log => log.log_start_time.includes("am"));
     const nightList = logListTest.filter(log => log.log_start_time.includes("pm"));
 
-    // must adjust for 12:00 pm being earlier in the day than 1
+    const noonList = nightList.filter(log => log.log_start_time[0] == "1" && log.log_start_time[1] == "2" && log.log_start_time[2] == ":");
 
-    const noonList = logListTest.filter(log => log.log_start_time[0] == "1" && log.log_start_time[1] == "2" && log.log_start_time[2] == ":");
-
-    const afternoonList = logListTest.filter(log => log.log_start_time[0] != "1" && log.log_start_time[1] != "2" && log.log_start_time[2] != ":")
+    const afternoonList = nightList.filter(log => log.log_start_time[0] != "1" && log.log_start_time[1] != "2" && log.log_start_time[2] != ":")
 
     const adjustedNoonList = noonList.sort((a,b) => a.log_start_time - b.log_start_time)
 
@@ -40,9 +38,11 @@ function ViewLogs(props) {
     const almostFinalLogList = adjustedMorningList.concat(adjustedNoonList)
     const finalLogList = almostFinalLogList.concat(adjustedNightList)
 
+    console.log(finalLogList)
+
     const myLogObjectArray = finalLogList.map((log) => {
         return (
-            <LogCard key={keyFinder()} logCardCategory={log.log_type} logCardTitle={log.log_title} logCardDuration={"45m"} logCardStartTime={log.log_start_time} logCardEndTime={log.log_end_time} logCardDescription={log.log_description} deleteLog={deleteLogHandler} />
+            <LogCard key={keyFinder()} logDate={log.log_date} logCardTitle={log.log_title} logCardDuration={"45m"} logCardStartTime={log.log_start_time} logCardEndTime={log.log_end_time} logCardDescription={log.log_description} deleteLog={deleteLogHandler} />
         )
     })
 
@@ -51,12 +51,12 @@ function ViewLogs(props) {
 
         <MainOverlay>
             <div className={styles["main-container"]}>
-                <OverlayTab text="today" />
+                <OverlayTab text="back" onClick={props.toggleViewLogsOverlay} />
                 <div className={styles.container}>
                     {props.logList.length===0 && <span>You have not logged anything today</span>}
                     {myLogObjectArray}
                 </div>
-                <OverlayTab text="back" onClick={props.toggleViewLogsOverlay} />
+                <OverlayTab text="Cain Creative" />
         
             </div>
         </MainOverlay>

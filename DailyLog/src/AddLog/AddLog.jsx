@@ -25,9 +25,9 @@ function AddLog(props) {
 
     const [logData, setLogData] = useState({});
     const liveTime = props.liveTime;
-    const dayOfWeek = daysOfWeek[liveTime.getDay()];
-    const numberDay = liveTime.getDate();
     const [numFormActive, setNumFormActive] = useState(false)
+
+    const logDate = liveTime.toLocaleDateString();
 
     function submitInputHandler(text) {
 
@@ -51,8 +51,7 @@ function AddLog(props) {
 
         if (iteration >= listOfKeys.length - 1) {
             // ADD THE DATE AT THE VERY END RIGHT HERE
-            logData.weekday = dayOfWeek;
-            logData.monthDay = numberDay;
+            logData.log_date = logDate
             props.addLogHandler(logData)
             setLogData({})
        }

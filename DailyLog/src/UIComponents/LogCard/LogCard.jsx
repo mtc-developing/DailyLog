@@ -16,7 +16,7 @@ function LogCard(props) {
             <div className={styles["title-container"]}>
                 <div>{props.logCardCategory}</div>
                 <div className={styles.title}>{props.logCardTitle}</div>
-                <div>{props.logCardDuration}</div>
+                <div>{props.logDate}</div>
             </div>
             <div className={styles["description-container"]}>
                 <div>{props.logCardDescription}</div>

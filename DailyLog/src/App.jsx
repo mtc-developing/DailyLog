@@ -11,15 +11,6 @@ import AddLog from './AddLog/AddLog.jsx'
 // MY CUSTOME STYLE IMPORTS
 import styles from './App.module.css'
 
-const DUMMY_LIST_OF_LOGS = [{
-  log_title: "Grocery/Errands",
-  log_type: "Family",
-  log_description: "Went to market basket for their weekly groceries, CVS for diapers and meds, and the mill for their favorite coffee",
-  log_start_time: "12:30pm",
-  log_end_time: "2:00pm",
-  log_count: 0,
-}]
-
   const localStorage=window.localStorage
 
 function App() {

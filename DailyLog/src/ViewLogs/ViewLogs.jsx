@@ -33,7 +33,9 @@ function ViewLogs(props) {
     const adjustedNightList = afternoonList.sort((a, b) => a.log_start_time - b.log_start_time);
 
     const almostFinalLogList = adjustedMorningList.concat(adjustedNoonList)
-    const finalLogList = almostFinalLogList.concat(adjustedNightList)
+    const preFinalLogList = almostFinalLogList.concat(adjustedNightList)
+
+    const finalLogList = preFinalLogList.sort((a,b) => a.log_date - b.log_date)
 
     const myLogObjectArray = finalLogList.map((log) => {
         return (

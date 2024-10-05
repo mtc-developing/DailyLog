@@ -11,6 +11,7 @@ const listOfDirections = ["If you struggle being productive with to-do lists, Da
 function Settings(props) {
 
     const [emailInput, setEmailInput] = useState(false)
+    const [email, setEmail] = useState(localStorage.getItem("userEmail"));
     const [inputValue, setInputValue] = useState("")
     const [openingPage, setOpeningPage] = useState(true)
     const [directions, setDirections] = useState(false)
@@ -95,7 +96,7 @@ function Settings(props) {
             <div className={styles.text}>
                 <div>{text}</div>
                 {/* we will pout a conditional here for email input */}
-                {emailInput && <input type="text" onChange={inputValueHandler} ref={mainInput} className={styles.input}></input>}
+                {emailInput && <div> <input type="text" onChange={inputValueHandler} ref={mainInput} className={styles.input}></input>{email && <span><p>current email on file:</p><p>{email || "none"}</p></span>}</div>}
                 {!openingPage && <div className={styles.button} onClick={buttonHandler}>OK</div>}
             </div>
         </MainOverlay>

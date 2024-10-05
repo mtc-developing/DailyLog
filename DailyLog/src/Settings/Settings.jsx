@@ -11,12 +11,13 @@ const listOfDirections = ["If you struggle being productive with to-do lists, Da
 function Settings(props) {
 
     const [emailInput, setEmailInput] = useState(false)
-    const [email, setEmail] = useState(localStorage.getItem("userEmail"));
+    const email=localStorage.getItem("userEmail");
     const [inputValue, setInputValue] = useState("")
     const [openingPage, setOpeningPage] = useState(true)
     const [directions, setDirections] = useState(false)
     const [directionsCount, setDirectionsCount] = useState(0)
     const [text, setText] = useState(listOfDirections[0])
+    const [forceRefresh, setForceRefresh] = useState(false)
     
     const mainInput = useRef(null)
 
@@ -42,12 +43,14 @@ function Settings(props) {
     
     function addEmailHandler() {
         setOpeningPage(false);
+        setForceRefresh(false);
         setEmailInput(true);
         setText("When you refresh your logs, dailyLog will send an email to this address with your daily/weekly logs.")
     }
     function viewDirectionsHandler() {
         setOpeningPage(false);
-        setDirections(true)
+        setForceRefresh(false);
+        setDirections(true);
         if (emailInput) {
             setEmailInput(false)
         };
@@ -57,13 +60,19 @@ function Settings(props) {
     }
     function forceRefreshHandler() {
         setOpeningPage(false);
-        if (emailInput) {
-            setEmailInput(false);
-        };
+        setEmailInput(false);
+        setForceRefresh(true);
         setText("Forcing a refresh will send all of your current logs to your email address if provided, as well as remove these logs from your local storage. Continue?")
     }
 
     function buttonHandler() {
+        if (emailInput) {
+            props.setUserEmail(inputValue)
+            setDirections(false)
+            setForceRefresh(false)
+            setDirectionsCount(0)
+            mainInput.current.value = ""
+        }
         if (directions && directionsCount >= listOfDirections.length-1) {
             setText(listOfDirections[0])
             setDirectionsCount(0)
@@ -75,9 +84,11 @@ function Settings(props) {
             setDirectionsCount(directionsCount + 1)
             return
         }
-        if (emailInput) {
-            localStorage.setItem("userEmail", inputValue);
-        };
+        if (forceRefresh && email) {
+            // email information
+            console.log("now we send the info via email and remove info from local storage")
+            // delete local cache
+        }
     }
 
     function inputValueHandler(e) {
@@ -95,8 +106,7 @@ function Settings(props) {
             </div>
             <div className={styles.text}>
                 <div>{text}</div>
-                {/* we will pout a conditional here for email input */}
-                {emailInput && <div> <input type="text" onChange={inputValueHandler} ref={mainInput} className={styles.input}></input>{email && <span><p>current email on file:</p><p>{email || "none"}</p></span>}</div>}
+                {emailInput && <div> <input type="text" onChange={inputValueHandler} ref={mainInput} className={styles.input}></input>{email && <span><p className={styles.flashing}>current email on file:</p><p>{email || "none"}</p></span>}</div>}
                 {!openingPage && <div className={styles.button} onClick={buttonHandler}>OK</div>}
             </div>
         </MainOverlay>

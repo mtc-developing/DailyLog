@@ -17,6 +17,7 @@ function App() {
   
   // MAIN APP LIST OF LOG OBJECTS, EVENTUALLY TO LIVE IN SOME SORT OF BACKEND, NBBUT FOR NOW LIVES IN LOCAL STORAGE
   const [logList, setLogList] = useState(JSON.parse(localStorage.getItem("logList")))
+  const [userEmail, setUserEmail] = useState(localStorage.getItem("userEmail"))
 
   // STATES FOR LIVE TIME
   const [liveTime, setLiveTime] = useState(new Date());
@@ -86,6 +87,11 @@ function App() {
     setAddLogActive(true)
   }
 
+  // FUNCTIONALITY FOR SETTING USER EMAIL
+  function setUserEmailHandler(email) {
+    localStorage.setItem("userEmail", email);
+    setUserEmail(email)
+  }
   // FUNCTIONALITY FOR UPDATING LIST OF LOG OBJECTS
   function addLogHandler(logObject) {
     if (logList.length === 0) {
@@ -109,7 +115,7 @@ function App() {
 
       {/* THIS IS THE MAIN OVERLAY FOR POPUPS OR COPOPNENTS THAT REQUIRE PRECEDENCE IN DISPLAY */}
       {activeViewLogOverlay && <ViewLogs toggleViewLogsOverlay={toggleViewLogsOverlay} logList={logList} deleteLog={deleteLogHandler} />}
-      {settingsActive && <Settings toggleSettings={toggleSettingsHandler} introAnimation={introAnimation} />}
+      {settingsActive && <Settings toggleSettings={toggleSettingsHandler} introAnimation={introAnimation} setUserEmail={setUserEmailHandler} userEmail={userEmail}  />}
       {addLogActive && <AddLog toggleAddLog={toggleAddLogHandler} addLogHandler={addLogHandler} liveTime={liveTime} />}
 
       {/* THIS IS WHERE THE INTRO ANIMATIONS LIVE */}

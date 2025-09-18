@@ -1,0 +1,26 @@
+.NumForm{
+    height:100%;
+    width: 100%;
+    color: rgb(4,22,88);
+    text-shadow: 1px 1px 1px rgb(4,22,88);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    align-items: center;
+    justify-items: center;
+    font-size: 1.6rem;
+}
+
+.NumForm div{
+    border: 3px solid rgb(4,22,88);
+    background: rgb(245, 244, 251, 0.8);
+    padding: 0.8rem 1.2rem;
+    text-align: center;
+    width: 33%;
+}
+
+.time-display{
+    grid-column: span 2;
+    letter-spacing: 5px;
+    font-size: 1.8rem;
+}

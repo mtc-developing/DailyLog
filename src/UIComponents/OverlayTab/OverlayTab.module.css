@@ -1,0 +1,10 @@
+.overlay-tab{
+    font-size: 1.8rem;
+    letter-spacing: 0.88rem;
+    padding: 0.8rem;
+    background-color: rgba(244,245,251,0.88);
+    width: 100%;
+    text-align: center;
+    color: rgba(4,22,88, 0.422);
+    font-weight: bold;
+}

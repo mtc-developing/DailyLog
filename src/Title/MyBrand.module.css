@@ -1,0 +1,41 @@
+.myBrand{
+    position: fixed;
+    opacity:0;
+    animation: brand 3s linear forwards;
+    animation-delay: 7.5s;
+    top: 45%;
+    font-size: 1.88rem;
+    color: rgba(4,22,88);
+}
+
+@keyframes brand {
+
+    0%{
+        transform: scale(0.1);
+    }
+    50%{
+        top: 70%;
+        transform: scale(1.2);
+    }
+    60%{
+        transform: scale(1.2);
+    }
+    80%{
+        transform: scale(1);
+        opacity: 1;
+        top: 70%;
+        color: rgb(245, 244, 251)
+    }
+    90%{
+        top:65%;
+        transform: scale(0.8)
+    }
+    95%{
+        top: 100%;
+    }
+    100%{
+        opacity: .2;
+        top: 100%;
+    }
+
+}

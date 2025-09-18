@@ -1,0 +1,24 @@
+.main-overlay{
+    position: fixed;
+    display: flex;
+    top: 120%;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(244, 245, 251, 0.22);
+    backdrop-filter: blur(0.422rem);
+    box-shadow: 0px -5px 30px 5px black;
+    color: white;
+    font-size: 2rem;
+    z-index:50;
+    overflow: hidden;
+    border-radius: 8vw 8vw 0px 0px;
+    border-top: 5px solid white;
+    animation: overlay 1s ease-out forwards;
+}
+
+@keyframes overlay{
+    to{
+        top: 12%;
+    }
+}

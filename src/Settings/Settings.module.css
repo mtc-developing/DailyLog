@@ -1,0 +1,84 @@
+.settings{
+    width: 60%;
+    background-color: rgb(4,22,88);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    z-index: 22;
+    font-size: 1.422rem;
+}
+.text{
+    padding: 2rem 0.6rem;
+    width: 40%;
+    height: 100%;
+    color: black;
+    font-size: 1.122rem;
+    font-weight: bold;
+    text-align: center;
+    position: relative;
+    line-height: 1.6rem;
+}
+
+.text div, .text span{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.text p{
+    font-size: 0.88rem;
+    width: 88%;
+    height: auto;
+    overflow-x:auto;
+}
+
+.settings span{
+    width: 70%;
+    text-align: center;
+    padding: 1rem;
+    border: 1px solid rgb(244,245,251);
+}
+
+@keyframes settings{
+    to{
+        transform: translateX(0);
+    }
+}
+
+.button{
+    border:2px solid black;
+    color: black;
+    background: white;
+    padding: 0.6rem 1.8rem;
+    position: absolute;
+    bottom: 20%;
+    left: 50%;
+    transform: translateX(-50%)
+}
+
+.input{
+    height: 2rem;
+    border: 1px solid rgb(4,22,88);
+    font-weight: bold;
+    width: 80%;
+    margin-top:1.25rem;
+    padding: 4%;
+    font-size: 0.88rem;
+    letter-spacing: 0.12rem;
+}
+
+.flashing{
+    text-shadow: 0.5px 0.5px 0.5px grey;
+    animation: flash 2s ease alternate infinite;
+    margin-bottom: -0.422rem;
+}
+
+@keyframes flash{
+    from{
+        color:white;
+    }to{
+        color: red;
+    }
+}

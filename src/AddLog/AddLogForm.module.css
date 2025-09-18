@@ -1,0 +1,66 @@
+.add-log-body{
+    height:100%;
+    width: 100%;
+    color:white;
+    text-shadow: 1px 1px 1px rgb(4,22,88);
+    font-weight: bold;
+}
+
+.add-log-form-container{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.add-log-form-container input{
+    height: auto;
+    font-size: 1.44rem;
+    padding: 1rem;
+    border-radius: 20px;
+    color: rgb(4,22,88);
+}
+
+.text-input{
+    border: 5px solid rgb(4,22,88);
+}
+
+.description{
+    font-size: 1.22rem;
+    text-align: center;
+}
+
+.button{
+    width: 100%;
+    border: 2px solid rgb(4,22,88);
+    font-size: 1rem;
+    padding: 1.22rem;
+    border-left: none;
+    border-right: none;
+    box-shadow: 0px 5px 20px 2px rgba(4,22,88, 0.6) ;
+    letter-spacing: 1rem;
+    background: linear-gradient(to bottom, rgb(245, 244, 251) 70% , rgba(4, 22, 88, 0.5) 100%);
+    text-shadow: 1px 1px 1px white;
+    display: flex;
+    justify-content: space-evenly;
+    align-items:center;
+    width: 120vw;
+}
+
+.button:active{
+    box-shadow: none;
+    animation: button 0.2s ease forwards;
+}
+
+@keyframes button{
+    to{
+        transform: translateY(4px);
+        padding: 1.12rem;
+        font-size: 0.94rem;
+        margin-top: 2.5px;
+        margin-bottom: 3.5px;
+        background: linear-gradient(to bottom, rgba(4,22,88, 0.14) 10% , rgb(245, 244, 251)40%);
+    }
+}

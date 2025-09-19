@@ -11,14 +11,16 @@ import AddLog from './AddLog/AddLog.jsx'
 // MY CUSTOME STYLE IMPORTS
 import styles from './App.module.css'
 
-DUMMY_LIST_OF_LOGS = [
-  {
+var DUMMY_LIST_OF_LOGS = [
+  ({
     log_title: "Create your first log",
-    log_description: "",
-    log_start_time: '',
-    log_end_time: ''
-  }
+    log_description: "keep track of your daily events",
+    log_start_time: '8:00am',
+    log_end_time: '8:00pm',
+  })
 ]
+
+console.log(DUMMY_LIST_OF_LOGS)
 
   const localStorage=window.localStorage
 

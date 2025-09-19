@@ -1,4 +1,4 @@
-import React, { useState , useEffect } from 'react'
+import { useState , useEffect } from 'react'
 
 import Title from './Title/Title'
 import MainBackground from './MainBackground/MainBackground'
@@ -14,6 +14,8 @@ import styles from './App.module.css'
   const localStorage=window.localStorage
 
 function App() {
+
+
   
   // MAIN APP LIST OF LOG OBJECTS, EVENTUALLY TO LIVE IN SOME SORT OF BACKEND, NBBUT FOR NOW LIVES IN LOCAL STORAGE
   const [logList, setLogList] = useState(JSON.parse(localStorage.getItem("logList")))

@@ -32,7 +32,7 @@ function App() {
   const [addLogActive, setAddLogActive] = useState(false);
 
   useEffect(() => {
-    if (logList.length==0 || !logList[0].log_title) {
+    if (!logList.length || !logList[0].log_title) {
       setLogList(DUMMY_LIST_OF_LOGS)
     }
   }, [])
@@ -45,7 +45,7 @@ function App() {
     setTimeout(function () {
       setIntroFinished(true)
     }, 13000)
-  }, [,introFinished])
+  }, [introFinished])
 
   useEffect(() => {
     const interval = setInterval(() => {

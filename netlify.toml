@@ -1,4 +1,0 @@
-[build]
-  base = "DailyLog"  # This should be the relative path to the directory where your code resides.
-  publish = "dist"  # Where the built files will be deployed from.
-  command = "npm run build"  # Or whatever build command you're using.

@@ -27,13 +27,7 @@ console.log(DUMMY_LIST_OF_LOGS)
 function App() {
   
   // MAIN APP LIST OF LOG OBJECTS, EVENTUALLY TO LIVE IN SOME SORT OF BACKEND, NBBUT FOR NOW LIVES IN LOCAL STORAGE
-  const [logList, setLogList] = useState(() => {
-    if (localStorage.getItem("logList")) {
-      return (JSON.parse(localStorage.getItem("logList")))
-    } else {
-      return (DUMMY_LIST_OF_LOGS)
-    }
-  })
+  const [logList, setLogList] = useState(JSON.parse(localStorage.getItem("logList")))
   
   const [userEmail, setUserEmail] = useState(localStorage.getItem("userEmail"))
 

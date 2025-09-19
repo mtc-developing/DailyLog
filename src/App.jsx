@@ -11,14 +11,28 @@ import AddLog from './AddLog/AddLog.jsx'
 // MY CUSTOME STYLE IMPORTS
 import styles from './App.module.css'
 
+DUMMY_LIST_OF_LOGS = [
+  {
+    log_title: "Create your first log",
+    log_description: "",
+    log_start_time: '',
+    log_end_time: ''
+  }
+]
+
   const localStorage=window.localStorage
 
 function App() {
-
-
   
   // MAIN APP LIST OF LOG OBJECTS, EVENTUALLY TO LIVE IN SOME SORT OF BACKEND, NBBUT FOR NOW LIVES IN LOCAL STORAGE
-  const [logList, setLogList] = useState(JSON.parse(localStorage.getItem("logList")))
+  const [logList, setLogList] = useState(() => {
+    if (localStorage.getItem("logList")) {
+      return (JSON.parse(localStorage.getItem("logList")))
+    } else {
+      return (DUMMY_LIST_OF_LOGS)
+    }
+  })
+  
   const [userEmail, setUserEmail] = useState(localStorage.getItem("userEmail"))
 
   // STATES FOR LIVE TIME
@@ -30,12 +44,6 @@ function App() {
   const [activeViewLogOverlay, setActiveViewLogOverlay] = useState(false);
   const [settingsActive, setSettingsActive] = useState(false);
   const [addLogActive, setAddLogActive] = useState(false);
-
-  useEffect(() => {
-    if (!logList.length || !logList[0].log_title) {
-      setLogList(DUMMY_LIST_OF_LOGS)
-    }
-  }, [])
 
   useEffect(() => {
     localStorage.setItem("logList", JSON.stringify(logList))
